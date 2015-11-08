@@ -29,6 +29,7 @@ Want to wipe the DB and start over?
 Deployed to Dokku.
 
     git push dokku
+    ssh dokku run toolbox mix ecto.migrate
 
 
 ## TODO:
