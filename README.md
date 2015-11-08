@@ -1,19 +1,29 @@
-# Toolbox
+# toolbox.elixir.pm
 
-To start your Phoenix app:
+WIP: A site to list Hex packages by category. Inspired by <http://ruby-toolbox.com>.
 
-  1. Install dependencies with `mix deps.get`
-  2. Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  3. Start Phoenix endpoint with `mix phoenix.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Development
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+    mix deps.get
+    mix ecto.create && mix ecto.migrate
+    mix phoenix.server
 
-## Learn more
+Now visit <http://localhost:4000>.
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: http://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+
+## Test
+
+    mix test
+
+
+## Production
+
+Deployed to Dokku.
+
+    git push dokku
+
+
+## License and credits
+
+By Henrik Nyh 2015-11-08 under the MIT license.
