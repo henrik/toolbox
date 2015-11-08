@@ -3,10 +3,9 @@ defmodule Toolbox.PackageController do
 
   alias Toolbox.Package
 
-  plug :scrub_params, "package" when action in [:create, :update]
-
   def index(conn, _params) do
-    packages = Repo.all(Package)
+    packages = Repo.all(Package.sort_by_name)
+
     render(conn, "index.html", packages: packages)
   end
 end

@@ -27,6 +27,9 @@ defmodule Toolbox.Mixfile do
     [
       :phoenix, :phoenix_html, :cowboy, :logger,
       :phoenix_ecto, :postgrex,
+
+      # For HexClient.
+      :httpotion,
     ]
   end
   defp app_list(:test) do
@@ -50,6 +53,11 @@ defmodule Toolbox.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.1"},
       {:cowboy, "~> 1.0"},
+      {:poison, "> 0.0.0"},
+
+      # For HexClient.
+      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
+      {:httpotion, "> 0.0.0"},
 
       {:phoenix_live_reload, "~> 1.0", only: :dev},
 

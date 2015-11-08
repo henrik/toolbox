@@ -19,7 +19,12 @@ You are expected to have Elixir and Postgres installed.
     mix ecto.setup
     mix phoenix.server
 
+Populate the database from the Hex API:
+
+    mix run -e 'Toolbox.PackageSync.run'
+
 Now visit <http://localhost:4000>.
+
 
 Want to wipe the DB and start over?
 
@@ -43,7 +48,7 @@ Deployed to Dokku.
 
 ### Pre-MVP
 - [x] List package names
-- [ ] Load packages into DB via some endpoint
+- [x] Load packages into DB via some endpoint
 
 ### MVP
 - [ ] Category CRU(D)

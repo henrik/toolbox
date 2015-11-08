@@ -1,20 +1,8 @@
 <h1>Elixir toolbox</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Hex updated at</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= for package <- @packages do %>
-    <tr>
-      <td><%= package.name %></td>
-      <td><%= package.description %></td>
-      <td><%= package.hex_updated_at %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<dl>
+  <%= for package <- @packages do %>
+    <dt><a href="<%= hex_url(package) %>"><%= package.name %></a></dt>
+    <dd><%= package.description %></dd>
+  <% end %>
+</dl>
