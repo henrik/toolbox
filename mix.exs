@@ -17,12 +17,29 @@ defmodule Toolbox.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Toolbox, []},
-     applications: [
-       :phoenix, :phoenix_html, :cowboy, :logger,
-       :phoenix_ecto, :postgrex,
-    ]]
+    [
+      mod: {Toolbox, []},
+      applications: app_list(Mix.env),
+    ]
   end
+
+  defp app_list do
+    [
+      :phoenix, :phoenix_html, :cowboy, :logger,
+      :phoenix_ecto, :postgrex,
+    ]
+  end
+  defp app_list(:dev) do
+    [
+      :ex_machina,
+    ] ++ app_list
+  end
+  defp app_list(:test) do
+    [
+      :ex_machina,
+    ] ++ app_list
+  end
+  defp app_list(_),  do: app_list
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
@@ -40,6 +57,8 @@ defmodule Toolbox.Mixfile do
       {:cowboy, "~> 1.0"},
 
       {:phoenix_live_reload, "~> 1.0", only: :dev},
+
+      {:ex_machina, "~> 0.4", only: [:dev, :test]},
     ]
   end
 
