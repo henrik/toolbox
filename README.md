@@ -5,6 +5,8 @@ WIP: A site to list Hex packages by category. Inspired by <http://ruby-toolbox.c
 
 ## Development
 
+You are expected to have Elixir and Postgres installed.
+
     mix deps.get
     mix ecto.create && mix ecto.migrate
     mix phoenix.server
