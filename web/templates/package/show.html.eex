@@ -1,0 +1,23 @@
+<h2>Show package</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @package.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @package.description %>
+  </li>
+
+  <li>
+    <strong>Hex updated at:</strong>
+    <%= @package.hex_updated_at %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: package_path(@conn, :edit, @package) %>
+<%= link "Back", to: package_path(@conn, :index) %>

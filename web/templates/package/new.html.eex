@@ -1,0 +1,6 @@
+<h2>New package</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: package_path(@conn, :create) %>
+
+<%= link "Back", to: package_path(@conn, :index) %>

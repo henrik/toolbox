@@ -16,7 +16,8 @@ defmodule Toolbox.Router do
   scope "/", Toolbox do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", PackageController, :index
+    resources "/packages", PackageController
   end
 
   # Other scopes may use custom stacks.

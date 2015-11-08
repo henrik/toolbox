@@ -1,0 +1,30 @@
+<h2>Listing packages</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Hex updated at</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for package <- @packages do %>
+    <tr>
+      <td><%= package.name %></td>
+      <td><%= package.description %></td>
+      <td><%= package.hex_updated_at %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: package_path(@conn, :show, package), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: package_path(@conn, :edit, package), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: package_path(@conn, :delete, package), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New package", to: package_path(@conn, :new) %>
