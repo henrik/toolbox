@@ -9,3 +9,7 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+if :dev == Mix.env do
+  IO.puts "TODO: Create dev data"
+end

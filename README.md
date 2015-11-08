@@ -43,7 +43,7 @@ Deployed to Dokku.
 - Show stats from GitHub
 - GitHub auth
 - Set up CI
-
+- Favicon
 
 ## License and credits
 
