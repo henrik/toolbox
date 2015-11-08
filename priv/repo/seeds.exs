@@ -11,5 +11,10 @@
 # and so on) as they will fail if something goes wrong.
 
 if :dev == Mix.env do
-  IO.puts "TODO: Create dev data"
+  alias Toolbox.Package
+
+  IO.puts "Creating dev data…"
+
+  Toolbox.Repo.insert! %Package{name: "my_package", description: "My package."}
+  Toolbox.Repo.insert! %Package{name: "another_package", description: "Another package."}
 end

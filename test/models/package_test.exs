@@ -1,6 +1,5 @@
 defmodule Toolbox.PackageTest do
   use Toolbox.ModelCase
-
   alias Toolbox.Package
 
   @valid_attrs %{description: "some content", hex_updated_at: "2010-04-17 14:00:00", name: "some content"}
