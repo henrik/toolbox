@@ -9,5 +9,5 @@ config :toolbox, Toolbox.Endpoint,
 # Configure your database
 config :toolbox, Toolbox.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("POSTGRESQL_URL"),
+  url: System.get_env("DATABASE_URL"),
   pool_size: 20
