@@ -26,6 +26,25 @@ Deployed to Dokku.
     git push dokku
 
 
+## TODO:
+
+### Pre-MVP
+- Load packages into DB via some endpoint
+- List package names
+
+### MVP
+- Category CRU(D)
+- Assigning (flat) categories to packages
+- Update packages on a schedule
+
+### Nice-to-have
+- List package descriptions
+- Show stats from Hex
+- Show stats from GitHub
+- GitHub auth
+- Set up CI
+
+
 ## License and credits
 
 By Henrik Nyh 2015-11-08 under the MIT license.
