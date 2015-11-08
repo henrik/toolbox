@@ -8,8 +8,7 @@ if :dev == Mix.env do
 
   IO.puts "Creating dev data…"
 
-  {:ok, time} = Ecto.DateTime.cast({{2010, 4, 17}, {14, 0, 0}})
-
-  Repo.insert! %Package{name: "my_package", description: "My package.", hex_updated_at: time}
-  Repo.insert! %Package{name: "another_package", description: "Another package.", hex_updated_at: time}
+  time = "2010-04-17T14:00:00Z"
+  Repo.insert! Package.changeset(%Package{}, %{name: "my_package", description: "My package.", hex_updated_at: time})
+  Repo.insert! Package.changeset(%Package{}, %{name: "another_package", description: "Another package.", hex_updated_at: time})
 end
