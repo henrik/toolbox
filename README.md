@@ -13,6 +13,11 @@ You are expected to have Elixir and Postgres installed.
 
 Now visit <http://localhost:4000>.
 
+Want to wipe the DB and start over?
+
+    mix ecto.reset
+
+
 
 ## Test
 

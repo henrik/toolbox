@@ -3,7 +3,8 @@ defmodule Toolbox.PackageControllerTest do
   alias Toolbox.Package
 
   test "GET / lists packages" do
-    package = Repo.insert! %Package{name: "my_package", description: "My package."}
+    {:ok, time} = Ecto.DateTime.cast({{2010, 4, 17}, {14, 0, 0}})
+    Repo.insert! %Package{name: "my_package", description: "My package.", hex_updated_at: time}
 
     conn = get conn(), "/"
     response = html_response(conn, 200)

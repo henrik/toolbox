@@ -3,9 +3,9 @@ defmodule Toolbox.Repo.Migrations.CreatePackage do
 
   def change do
     create table(:packages) do
-      add :name, :string
-      add :description, :text
-      add :hex_updated_at, :datetime
+      add :name, :string, null: false
+      add :description, :text, null: false
+      add :hex_updated_at, :datetime, null: false
 
       timestamps
     end
