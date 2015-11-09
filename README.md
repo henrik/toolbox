@@ -47,18 +47,20 @@ Deployed to Dokku.
 
 ### MVP
 - [ ] Category CRU(D)
-- [ ] Assigning (flat) categories to packages
+- [ ] Assigning (flat: "Phoenix / Auth") categories to packages
 - [ ] Update packages on a schedule
 
 ### Nice-to-have
-- [ ] Conditional GET
-- [ ] List package descriptions
+- [x] List package descriptions
+- [ ] Prettify
 - [ ] Show stats from Hex
 - [ ] Show stats from GitHub
-- [ ] GitHub auth
-- [ ] Set up CI
-- [ ] Favicon
 - [ ] Exception logging
+- [ ] CI
+- [ ] Favicon
+- [ ] Conditional GETs for API sync
+- [ ] GitHub auth?
+
 
 ## License and credits
 
