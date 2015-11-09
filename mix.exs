@@ -29,11 +29,6 @@ defmodule Toolbox.Mixfile do
       :phoenix_ecto, :postgrex,
     ]
   end
-  defp app_list(:dev) do
-    [
-      :ex_machina,
-    ] ++ app_list
-  end
   defp app_list(:test) do
     [
       :ex_machina,
@@ -58,7 +53,7 @@ defmodule Toolbox.Mixfile do
 
       {:phoenix_live_reload, "~> 1.0", only: :dev},
 
-      {:ex_machina, "~> 0.4", only: [:dev, :test]},
+      {:ex_machina, "~> 0.4", only: :test},
     ]
   end
 
