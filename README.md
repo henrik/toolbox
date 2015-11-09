@@ -43,7 +43,7 @@ Deployed to Dokku.
 
 ### Pre-MVP
 - [x] List package names
-- [x] Load packages into DB via some endpoint
+- [ ] Load packages into DB via some endpoint
 
 ### MVP
 - [ ] Category CRU(D)
