@@ -1,6 +1,14 @@
 # toolbox.elixir.pm
 
-WIP: A site to list Hex packages by category. Inspired by <http://ruby-toolbox.com>.
+A site to list Hex packages by category. Inspired by <http://ruby-toolbox.com>.
+
+## Status
+
+WIP. See [TODOs](#todo).
+
+Feedback super welcome; major code contributions currently not desired:
+
+Since I'm doing this in part to learn Phoenix, I **might not accept pull requests** for things I'd rather implement myself. Once the basic functionality is there, this will change.
 
 
 ## Development
@@ -16,7 +24,6 @@ Now visit <http://localhost:4000>.
 Want to wipe the DB and start over?
 
     mix ecto.reset
-
 
 
 ## Test
@@ -35,23 +42,23 @@ Deployed to Dokku.
 ## TODO:
 
 ### Pre-MVP
-- Load packages into DB via some endpoint
-- List package names
+- [x] List package names
+- [x] Load packages into DB via some endpoint
 
 ### MVP
-- Category CRU(D)
-- Assigning (flat) categories to packages
-- Update packages on a schedule
+- [ ] Category CRU(D)
+- [ ] Assigning (flat) categories to packages
+- [ ] Update packages on a schedule
 
 ### Nice-to-have
-- Conditional GET
-- List package descriptions
-- Show stats from Hex
-- Show stats from GitHub
-- GitHub auth
-- Set up CI
-- Favicon
-- Exception logging
+- [ ] Conditional GET
+- [ ] List package descriptions
+- [ ] Show stats from Hex
+- [ ] Show stats from GitHub
+- [ ] GitHub auth
+- [ ] Set up CI
+- [ ] Favicon
+- [ ] Exception logging
 
 ## License and credits
 
