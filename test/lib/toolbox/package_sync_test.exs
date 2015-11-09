@@ -14,14 +14,14 @@ defmodule Toolbox.PackageSyncTest do
 
   defmodule FakeHexClient do
     defmodule Packages do
-      def a, do: %{"name" => "a", "updated_at" => "2000-01-01T03:04:05Z", "meta" => %{"description" => "A."}}
-      def b, do: %{"name" => "b", "updated_at" => "2000-01-02T03:04:05Z", "meta" => %{"description" => "B."}}
+      def a, do: %{"name" => "a", "updated_at" => "2001-01-01T00:00:00Z", "meta" => %{"description" => "A."}}
+      def b, do: %{"name" => "b", "updated_at" => "2002-01-01T00:00:00Z", "meta" => %{"description" => "B."}}
 
       # Exact same timestamp to test border case.
-      def c, do: %{"name" => "c", "updated_at" => "2000-01-03T03:04:05Z", "meta" => %{"description" => "C."}}
-      def d, do: %{"name" => "d", "updated_at" => "2000-01-03T03:04:05Z", "meta" => %{"description" => "D."}}
+      def c, do: %{"name" => "c", "updated_at" => "2003-01-01T00:00:00Z", "meta" => %{"description" => "C."}}
+      def d, do: %{"name" => "d", "updated_at" => "2003-01-01T00:00:00Z", "meta" => %{"description" => "D."}}
 
-      def e, do: %{"name" => "e", "updated_at" => "2000-01-04T03:04:05Z", "meta" => %{"description" => "E."}}
+      def e, do: %{"name" => "e", "updated_at" => "2004-01-01T00:00:00Z", "meta" => %{"description" => "E."}}
     end
 
     defmodule OlderState do
@@ -44,18 +44,18 @@ defmodule Toolbox.PackageSyncTest do
       Toolbox.PackageSync.run(FakeHexClient.OlderState)
     end
 
-    assert package_names == ["c", "b", "a"]
+    assert package_names == ~w[a b c]
 
     capture_io fn ->
       Toolbox.PackageSync.run(FakeHexClient.NewerState)
     end
 
-    assert package_names == ["c", "b", "a", "e", "d"]
+    assert package_names == ~w[a b c d e]
 
     first_package = load_packages |> hd
-    assert first_package.name == "c"
-    assert first_package.description == "C."
-    assert first_package.hex_updated_at == parse_datetime("2000-01-03T03:04:05Z")
+    assert first_package.name == "a"
+    assert first_package.description == "A."
+    assert first_package.hex_updated_at == parse_datetime("2001-01-01T00:00:00Z")
   end
 
   defp package_names do
@@ -64,7 +64,7 @@ defmodule Toolbox.PackageSyncTest do
 
   defp load_packages do
     import Ecto.Query
-    Toolbox.Repo.all(Toolbox.Package, order: [asc: :id])
+    Toolbox.Repo.all(from p in Toolbox.Package, order_by: [asc: p.name])
   end
 
   defp count_packages do
