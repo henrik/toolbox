@@ -44,12 +44,14 @@ Deployed to Dokku.
 - Update packages on a schedule
 
 ### Nice-to-have
+- Conditional GET
 - List package descriptions
 - Show stats from Hex
 - Show stats from GitHub
 - GitHub auth
 - Set up CI
 - Favicon
+- Exception logging
 
 ## License and credits
 
