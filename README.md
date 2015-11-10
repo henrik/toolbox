@@ -38,10 +38,9 @@ Want to wipe the DB and start over?
 
 ## Production
 
-Deployed to Dokku.
+Deployed to Dokku. This deploys and then runs migrations, if any:
 
-    git push dokku
-    ssh dokku run toolbox mix ecto.migrate
+    script/deploy
 
 
 ## TODO:

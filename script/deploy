@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+echo "Pushing/deploying…"
+git push dokku
+
+echo
+echo "Migrating…"
+ssh dokku run toolbox mix ecto.migrate
