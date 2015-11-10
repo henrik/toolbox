@@ -40,17 +40,38 @@ defmodule Toolbox.PackageSync do
   defp update_or_create(packages) do
     alias Toolbox.Package
     alias Toolbox.Repo
+    import Ecto.Query
 
-    IO.inspect should_up: length(packages)
+    these_names = for p <- packages, do: p["name"]
 
-    # TODO: unique name in DB
-    # TODO: find or create, don't always create
-    for package <- packages do
+    pre_existing_names = Repo.all(
+      from p in Package,
+      select: p.name,
+      where: p.name in ^these_names
+    )
+
+    {to_update, to_create} = Enum.split_while packages, fn (package) ->
+      package["name"] in pre_existing_names
+    end
+
+    for package <- to_create do
       Repo.insert! Package.changeset(%Package{}, %{
         name: package["name"],
         description: package["meta"]["description"],
         hex_updated_at: package["updated_at"],
       })
+    end
+
+    for package <- to_update do
+      name = package["name"]
+      Repo.update_all(
+        from(p in Package, where: p.name == ^name),
+        set: [
+          name: package["name"],
+          description: package["meta"]["description"],
+          hex_updated_at: package["updated_at"],
+        ]
+      )
     end
   end
 
