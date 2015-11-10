@@ -1,4 +1,10 @@
-<h1>Elixir toolbox</h1>
+<header>
+  <h1>Elixir toolbox</h1>
+
+  <p>
+    A catalog of categorized (TODO) Hex packages with popularity ratings from Hex (TODO) and GitHub (TODO).
+  </p>
+</header>
 
 <dl>
   <%= for package <- @packages do %>
@@ -6,3 +12,12 @@
     <dd><%= package.description %></dd>
   <% end %>
 </dl>
+
+<footer>
+  <p>
+    Made with 🐍 by
+    <a href="http://henrik.nyh.se">Henrik Nyh</a>
+    as
+    <a href="https://github.com/henrik/elixir-toolbox">open source</a>.
+  </p>
+</footer>
