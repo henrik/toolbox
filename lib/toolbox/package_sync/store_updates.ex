@@ -4,36 +4,51 @@ defmodule Toolbox.PackageSync.StoreUpdates do
   import Ecto.Query
 
   def store(packages_data) do
-    these_names = for p <- packages_data, do: p["name"]
+    {to_update, to_create} = partition_data(packages_data)
 
-    pre_existing_names = Repo.all(
-      from p in Package,
-      select: p.name,
-      where: p.name in ^these_names
-    )
+    for data <- to_create, do: create_package(data)
+    for data <- to_update, do: update_package(data)
+  end
 
-    {to_update, to_create} = Enum.split_while packages_data, fn (package) ->
+  defp partition_data(packages_data) do
+    pre_existing_names = find_pre_existing_names(packages_data)
+
+    Enum.split_while packages_data, fn (package) ->
       package["name"] in pre_existing_names
     end
+  end
 
-    for package <- to_create do
-      Repo.insert! Package.changeset(%Package{}, %{
-        name: package["name"],
-        description: package["meta"]["description"],
-        hex_updated_at: package["updated_at"],
-      })
-    end
+  defp find_pre_existing_names(packages_data) do
+    names_of_updated_packages = for data <- packages_data, do: data["name"]
 
-    for package <- to_update do
-      name = package["name"]
-      Repo.update_all(
-        from(p in Package, where: p.name == ^name),
-        set: [
-          name: package["name"],
-          description: package["meta"]["description"],
-          hex_updated_at: package["updated_at"],
-        ]
-      )
-    end
+    Repo.all(
+      from p in Package,
+      select: p.name,
+      where: p.name in ^names_of_updated_packages
+    )
+  end
+
+  defp create_package(data) do
+    Repo.insert!(
+      Package.changeset(%Package{}, changes_from_data(data))
+    )
+  end
+
+  defp update_package(data) do
+    name = data["name"]
+    changes_as_keyword_list = data |> changes_from_data |> Enum.into([])
+
+    Repo.update_all(
+      from(p in Package, where: p.name == ^name),
+      set: changes_as_keyword_list
+    )
+  end
+
+  defp changes_from_data(data) do
+    %{
+      name: data["name"],
+      description: data["meta"]["description"],
+      hex_updated_at: data["updated_at"],
+    }
   end
 end
