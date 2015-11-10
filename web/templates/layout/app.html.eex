@@ -5,16 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Elixir toolbox</title>
+    <title><%= title %></title>
     <link href="https://fonts.googleapis.com/css?family=Actor" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
+    <header>
+      <h1 class="site-header"><%= title %></h1>
+
+      <p class="site-description">
+      WIP! A categorized catalog of Hex packages<!--TODO: with popularity ratings from Hex and GitHub -->.
+      </p>
+    </header>
+
     <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
     <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
     <%= @inner %>
+
+    <footer>
+      <p>
+        Made with 🐍 by
+        <a href="http://henrik.nyh.se">Henrik Nyh</a>
+        as
+        <a href="https://github.com/henrik/elixir-toolbox">open source</a>.
+      </p>
+    </footer>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
