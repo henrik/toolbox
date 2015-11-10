@@ -27,6 +27,7 @@ defmodule Toolbox.Mixfile do
     [
       :phoenix, :phoenix_html, :cowboy, :logger,
       :phoenix_ecto, :postgrex,
+      :honeybadger,
 
       # For HexClient.
       :httpotion,
@@ -54,6 +55,7 @@ defmodule Toolbox.Mixfile do
       {:phoenix_html, "~> 2.1"},
       {:cowboy, "~> 1.0"},
       {:poison, "> 0.0.0"},
+      {:honeybadger, "~> 0.1"},
 
       # For HexClient.
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},

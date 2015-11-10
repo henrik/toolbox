@@ -1,5 +1,6 @@
 defmodule Toolbox.Router do
   use Toolbox.Web, :router
+  use Honeybadger.Plug
 
   pipeline :browser do
     plug :accepts, ["html"]
