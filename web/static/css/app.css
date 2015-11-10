@@ -6,13 +6,23 @@ body {
 }
 
 header {
-  text-align: center;
   margin-bottom: 30px;
 }
 
 footer {
   text-align: center;
   margin-top: 30px;
+}
+
+.site-header {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.site-description {
+  font-size: 25px;
+  color: #888;
+  margin-top: 10px;
 }
 
 /* Phoenix flash messages */

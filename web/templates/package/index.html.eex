@@ -1,7 +1,7 @@
 <header>
-  <h1>Elixir toolbox</h1>
+  <h1 class="site-header">Elixir toolbox</h1>
 
-  <p>
+  <p class="site-description">
     A catalog of categorized (TODO) Hex packages with popularity ratings from Hex (TODO) and GitHub (TODO).
   </p>
 </header>
