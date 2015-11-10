@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Elixir toolbox</title>
+    <link href="https://fonts.googleapis.com/css?family=Actor" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
