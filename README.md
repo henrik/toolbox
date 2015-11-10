@@ -57,6 +57,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 ### Pre-launch
 - [x] List package descriptions
 - [x] Exception logging
+- [ ] Verify all packages are synced (e.g. count them)
 - [ ] Prettify
 - [ ] Look into VPS memory usage
 
