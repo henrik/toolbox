@@ -54,12 +54,15 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [ ] Assigning (flat: "Phoenix / Auth") categories to packages
 - [ ] Update packages on a schedule
 
-### Nice-to-have
+### Pre-launch
 - [x] List package descriptions
+- [x] Exception logging
 - [ ] Prettify
+- [ ] Look into VPS memory usage
+
+### Nice-to-have
 - [ ] Show stats from Hex
 - [ ] Show stats from GitHub
-- [ ] Exception logging
 - [ ] CI
 - [ ] Favicon
 - [ ] Conditional GETs for API sync
