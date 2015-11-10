@@ -38,7 +38,7 @@ defmodule Toolbox.PackageSyncTest do
   end
 
   test "it creates any new packages in DB" do
-    assert count_packages == 0
+    assert package_names == []
 
     capture_io fn ->
       Toolbox.PackageSync.run(FakeHexClient.OlderState)
@@ -63,13 +63,7 @@ defmodule Toolbox.PackageSyncTest do
   end
 
   defp load_packages do
-    import Ecto.Query
-    Toolbox.Repo.all(from p in Toolbox.Package, order_by: [asc: p.name])
-  end
-
-  defp count_packages do
-    import Ecto.Query
-    Toolbox.Repo.one!(from p in Toolbox.Package, select: count(p.id))
+    Toolbox.Repo.all(Toolbox.Package.sort_by_name)
   end
 
   defp parse_datetime(string) do
