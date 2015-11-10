@@ -40,13 +40,13 @@ defmodule Toolbox.PackageSyncTest do
   test "it creates any new packages in DB" do
     assert package_names == []
 
-    capture_io fn ->
+    silence_output fn ->
       Toolbox.PackageSync.run(FakeHexClient.OlderState)
     end
 
     assert package_names == ~w[a b c]
 
-    capture_io fn ->
+    silence_output fn ->
       Toolbox.PackageSync.run(FakeHexClient.NewerState)
     end
 
@@ -57,6 +57,8 @@ defmodule Toolbox.PackageSyncTest do
     assert first_package.description == "A."
     assert first_package.hex_updated_at == parse_datetime("2001-01-01T00:00:00Z")
   end
+
+  defp silence_output(fun), do: capture_io(fun)
 
   defp package_names do
     load_packages |> Enum.map &(&1.name)
