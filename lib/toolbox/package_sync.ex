@@ -10,30 +10,32 @@ defmodule Toolbox.PackageSync do
     run(client, 1, Toolbox.Package.newest_hex_updated_at_with_names)
   end
 
-  defp run(client, page, {no_older_than_time, names_on_the_limit} = newest_data) do
-    packages = client.packages(page: page, sort: "updated_at")
+  defp run(client, page, newest_data) do
+    packages = get_packages_on_page(client, page)
+    {updated_packages, old_packages} = partition_packages(packages, newest_data)
 
-    {updated_packages, old_packages} = Enum.split_while packages, fn (package) ->
-      pup = package["updated_at"] |> parse_datetime
+    update_or_create(updated_packages)
 
-      case Ecto.DateTime.compare(pup, no_older_than_time) do
+    case {old_packages, packages} do
+      {_, []}    -> :noop # We're on an empty page. Stop.
+      {[_|_], _} -> :noop # Page contains old packages, so next page will too. Stop.
+      _          -> run(client, page + 1, newest_data)
+    end
+  end
+
+  defp get_packages_on_page(client, page) do
+    client.packages(page: page, sort: "updated_at")
+  end
+
+  defp partition_packages(packages, {no_older_than_time, names_on_the_limit}) do
+    Enum.split_while packages, fn (package) ->
+      package_updated_at = package["updated_at"] |> parse_datetime
+
+      case Ecto.DateTime.compare(package_updated_at, no_older_than_time) do
         :gt -> true
         :eq -> not (package["name"] in names_on_the_limit)
         _ -> false
       end
-    end
-
-    IO.inspect page: page, updated: length(updated_packages), old: length(old_packages)
-
-    update_or_create(updated_packages)
-
-    # checking length is a bit inefficient
-    should_stop? = length(old_packages) > 0 or length(packages) == 0
-
-    if should_stop? do
-      IO.puts "Let's stop."
-    else
-      run(client, page + 1, newest_data)
     end
   end
 
