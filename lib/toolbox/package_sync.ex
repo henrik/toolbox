@@ -5,7 +5,8 @@
 
 defmodule Toolbox.PackageSync do
   def run(client \\ HexClient) do
-    Toolbox.PackageSync.FetchUpdates.fetch(client) |>
-    Toolbox.PackageSync.StoreUpdates.store
+    client
+    |> Toolbox.PackageSync.FetchUpdates.fetch
+    |> Toolbox.PackageSync.StoreUpdates.store
   end
 end
