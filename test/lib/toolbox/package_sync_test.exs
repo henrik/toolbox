@@ -24,6 +24,8 @@ defmodule Toolbox.PackageSyncTest do
       def e, do: %{"name" => "e", "updated_at" => "2004-01-01T00:00:00Z", "meta" => %{"description" => "E."}}
 
       def updated_a, do: %{"name" => "a", "updated_at" => "2005-01-01T00:00:00Z", "meta" => %{"description" => "Updated A."}}
+
+      def f, do: %{"name" => "f", "updated_at" => "2006-01-01T00:00:00Z", "meta" => %{"description" => "F."}}
     end
 
     defmodule State1 do
@@ -40,7 +42,7 @@ defmodule Toolbox.PackageSyncTest do
 
     defmodule State3 do
       import FakeHexClient.Packages
-      def packages(page: 1, sort: "updated_at"), do: [updated_a, e]
+      def packages(page: 1, sort: "updated_at"), do: [f, updated_a, e]
     end
   end
 
@@ -67,7 +69,7 @@ defmodule Toolbox.PackageSyncTest do
       Toolbox.PackageSync.run(FakeHexClient.State3)
     end
 
-    assert package_names == ~w[a b c d e]
+    assert package_names == ~w[a b c d e f]
 
     assert first_package.name == "a"
     assert first_package.description == "Updated A."

@@ -13,7 +13,7 @@ defmodule Toolbox.PackageSync.StoreUpdates do
   defp partition_data(packages_data) do
     pre_existing_names = find_pre_existing_names(packages_data)
 
-    Enum.split_while packages_data, fn (package) ->
+    Enum.partition packages_data, fn (package) ->
       package["name"] in pre_existing_names
     end
   end
