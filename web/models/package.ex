@@ -1,5 +1,6 @@
 defmodule Toolbox.Package do
   use Toolbox.Web, :model
+  require Ecto.Query
 
   schema "packages" do
     field :name, :string
@@ -25,10 +26,13 @@ defmodule Toolbox.Package do
   end
 
   def sort_by_name(query \\ Toolbox.Package) do
-    import Ecto.Query
-
-    from p in query,
+    Ecto.Query.from p in query,
       order_by: [asc: p.name]
+  end
+
+  def count do
+    Ecto.Query.from p in Toolbox.Package,
+      select: count(p.id)
   end
 
   def newest_hex_updated_at_with_names do
@@ -43,9 +47,7 @@ defmodule Toolbox.Package do
   end
 
   defp newest_hex_updated_at_with_names_query do
-    import Ecto.Query
-
-    from p in Toolbox.Package,
+    Ecto.Query.from p in Toolbox.Package,
       where: fragment(
         "? IN (SELECT MAX(packages.hex_updated_at) FROM packages)",
         p.hex_updated_at

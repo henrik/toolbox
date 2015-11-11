@@ -1,3 +1,5 @@
+<p>Listing <%= @packages_count %> packages.</p>
+
 <dl>
   <%= for package <- @packages do %>
     <dt><a href="<%= hex_url(package) %>"><%= package.name %></a></dt>
