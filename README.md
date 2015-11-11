@@ -60,6 +60,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [ ] Verify all packages are synced (e.g. count them)
 - [ ] Prettify
 - [ ] Look into VPS memory usage
+- [ ] Honeypot for categories to avoid spam?
 
 ### Nice-to-have
 - [ ] Show stats from Hex
