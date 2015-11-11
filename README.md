@@ -65,6 +65,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [ ] Show stats from Hex
 - [ ] Show stats from GitHub
 - [ ] Sass
+- [ ] Slim
 - [ ] CI
 - [ ] Favicon
 - [ ] Conditional GETs for API sync
