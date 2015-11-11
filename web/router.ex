@@ -19,6 +19,7 @@ defmodule Toolbox.Router do
 
     get "/", PackageController, :index
     resources "/packages", PackageController
+    resources "/categories", CategoryController
   end
 
   # Other scopes may use custom stacks.

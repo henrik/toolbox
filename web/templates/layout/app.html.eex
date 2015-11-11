@@ -17,6 +17,12 @@
       <p class="site-description">
       WIP! A categorized catalog of Hex packages<!--TODO: with popularity ratings from Hex and GitHub -->.
       </p>
+
+      <p>
+        <a href="/">Packages</a>
+        -
+        <a href="/categories">Manage categories</a>
+      </p>
     </header>
 
     <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
