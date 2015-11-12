@@ -71,8 +71,8 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [ ] Show stats from GitHub
 - [ ] Sass
 - [ ] Slim
-- [ ] CI
 - [ ] Favicon
+- [ ] CI
 
 
 ## License and credits
