@@ -1,16 +1,14 @@
-defmodule Toolbox.Category do
+defmodule Toolbox.Categorization do
   use Toolbox.Web, :model
 
-  schema "categories" do
-    field :name, :string
-
-    has_many :categorizations, Toolbox.Categorization
-    has_many :packages, through: [:categorizations, :package]
+  schema "categorizations" do
+    belongs_to :category, Toolbox.Category
+    belongs_to :package, Toolbox.Package
 
     timestamps
   end
 
-  @required_fields ~w(name)
+  @required_fields ~w(category_id package_id)
   @optional_fields ~w()
 
   @doc """

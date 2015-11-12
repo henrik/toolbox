@@ -7,6 +7,9 @@ defmodule Toolbox.Package do
     field :description, :string
     field :hex_updated_at, Ecto.DateTime
 
+    has_many :categorizations, Toolbox.Categorization
+    has_many :categories, through: [:categorizations, :category]
+
     timestamps
   end
 

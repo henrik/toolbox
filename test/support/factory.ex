@@ -1,6 +1,9 @@
 defmodule Toolbox.Factory do
-  alias Toolbox.Package
   use ExMachina.Ecto, repo: Toolbox.Repo
+
+  alias Toolbox.Package
+  alias Toolbox.Category
+  alias Toolbox.Categorization
 
   def factory(:package, attrs) do
     # :/ https://github.com/thoughtbot/ex_machina/issues/54
@@ -11,6 +14,19 @@ defmodule Toolbox.Factory do
       name: sequence(:name, &"package#{&1}"),
       description: "A package.",
       hex_updated_at: cast_time,
+    }
+  end
+
+  def factory(:category, _attrs) do
+    %Category{
+      name: sequence(:name, &"Category #{&1}"),
+    }
+  end
+
+  def factory(:categorization, attrs) do
+    %Categorization{
+      package: assoc(attrs, :package),
+      category: assoc(attrs, :category),
     }
   end
 end
