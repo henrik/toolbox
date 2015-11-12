@@ -22,7 +22,7 @@ defmodule Toolbox.PackageSyncWorkerTest do
     :ok
   end
 
-  test "it runs a sync on an interval" do
+  test "it syncs on an interval" do
     Process.register self, :test
     {:ok, _} = Toolbox.PackageSyncWorker.start_link
 
