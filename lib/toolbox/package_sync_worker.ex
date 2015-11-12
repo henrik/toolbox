@@ -1,5 +1,3 @@
-# TODO: Honeybadger.
-
 defmodule Toolbox.PackageSyncWorker do
   use GenServer
 

@@ -23,6 +23,10 @@ config :toolbox, Toolbox.PackageSyncWorker,
   syncer: Toolbox.PackageSync,
   interval: 5 * 60 * 1000  # ms (= 5 minutes)
 
+# Handle errors outside of web requests.
+config :honeybadger,
+  use_logger: true
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
