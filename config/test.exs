@@ -18,6 +18,5 @@ config :toolbox, Toolbox.Repo,
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
-config :toolbox, Toolbox.PackageSyncWorker,
-  syncer: Toolbox.PackageSync.NoOp,
-  interval: 999_999  # ms
+config :toolbox,
+  :package_syncer, Toolbox.PackageSync.NoOp

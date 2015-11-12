@@ -2,21 +2,17 @@ defmodule Toolbox.PackageSyncWorkerTest do
   use ExUnit.Case
 
   defmodule TestSyncer do
-    def run do
-      send :test, :synced
-    end
+    def interval, do: 30
+    def run, do: send(:test, :synced)
   end
 
   setup do
-    old_env = Application.get_env(:toolbox, Toolbox.PackageSyncWorker)
+    old_syncer = Application.get_env(:toolbox, :package_syncer)
 
-    Application.put_env(:toolbox, Toolbox.PackageSyncWorker,
-      syncer: TestSyncer,
-      interval: 30,
-    )
+    Application.put_env(:toolbox, :package_syncer, TestSyncer)
 
     on_exit fn ->
-      Application.put_env(:toolbox, Toolbox.PackageSyncWorker, old_env)
+      Application.put_env(:toolbox, :package_syncer, old_syncer)
     end
 
     :ok

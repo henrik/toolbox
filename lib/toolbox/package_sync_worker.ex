@@ -26,11 +26,6 @@ defmodule Toolbox.PackageSyncWorker do
     syncer.run
   end
 
-  defp interval, do: fetch_config!(:interval)
-  defp syncer, do: fetch_config!(:syncer)
-
-  defp fetch_config!(key) do
-    Application.get_env(:toolbox, __MODULE__)
-    |> Dict.fetch!(key)
-  end
+  defp interval, do: syncer.interval
+  defp syncer, do: Application.fetch_env!(:toolbox, :package_syncer)
 end

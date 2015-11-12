@@ -19,9 +19,8 @@ config :toolbox, Toolbox.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
-config :toolbox, Toolbox.PackageSyncWorker,
-  syncer: Toolbox.PackageSync,
-  interval: 5 * 60 * 1000  # ms (= 5 minutes)
+config :toolbox,
+  :package_syncer, Toolbox.PackageSync
 
 # Handle errors outside of web requests.
 config :honeybadger,

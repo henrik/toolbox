@@ -41,6 +41,5 @@ config :toolbox, Toolbox.Repo,
   hostname: "localhost",
   pool_size: 10
 
-config :toolbox, Toolbox.PackageSyncWorker,
-  syncer: Toolbox.PackageSync.NoOp,
-  interval: 999_999 # ms
+config :toolbox,
+  :package_syncer, Toolbox.PackageSync.NoOp
