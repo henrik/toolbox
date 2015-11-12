@@ -40,3 +40,7 @@ config :toolbox, Toolbox.Repo,
   database: "toolbox_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :toolbox, Toolbox.PackageSyncWorker,
+  syncer: Toolbox.PackageSync.NoOp,
+  interval: 999_999 # ms

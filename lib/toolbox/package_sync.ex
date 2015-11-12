@@ -1,4 +1,6 @@
-# TODO: Schedule this. Until then, run manually like so:
+# Scheduled, see PackageSyncWorker.
+#
+# If you need to run this manually:
 #
 #     mix run -e 'Toolbox.PackageSync.run'
 #     ssh dokku run toolbox mix run -e 'Toolbox.PackageSync.run'

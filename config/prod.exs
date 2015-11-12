@@ -19,6 +19,10 @@ config :toolbox, Toolbox.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :toolbox, Toolbox.PackageSyncWorker,
+  syncer: Toolbox.PackageSync,
+  interval: 5 * 60 * 1000  # ms (= 5 minutes)
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

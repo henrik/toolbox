@@ -11,6 +11,8 @@ defmodule Toolbox do
       supervisor(Toolbox.Endpoint, []),
       # Start the Ecto repository
       worker(Toolbox.Repo, []),
+      # Syncing packages from Hex
+      worker(Toolbox.PackageSyncWorker, []),
       # Here you could define other workers and supervisors as children
       # worker(Toolbox.Worker, [arg1, arg2, arg3]),
     ]
