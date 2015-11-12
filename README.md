@@ -57,7 +57,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 ### MVP
 - [ ] Category CRU(D)
 - [ ] Assigning (flat: "Phoenix / Auth") categories to packages
-- [ ] Update packages on a schedule
+- [ ] Update packages on a schedule [1](http://stackoverflow.com/a/32097971/6962)
 
 ### Pre-launch
 - [x] List package descriptions
