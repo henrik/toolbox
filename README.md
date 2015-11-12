@@ -1,6 +1,11 @@
-# toolbox.elixir.pm
+# The BEAM Toolbox
 
-A site to list Hex packages by category. Inspired by <http://ruby-toolbox.com>.
+<http://toolbox.elixir.pm>
+
+A site to list Hex packages by category.
+
+Inspired by <http://ruby-toolbox.com>. Name borrowed from Josh Adams of [Elixir Sips](http://elixirsips.com/) with his blessing.
+
 
 ## Status
 
