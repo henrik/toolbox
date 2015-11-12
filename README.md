@@ -55,16 +55,15 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [x] Load packages into DB via some endpoint
 
 ### MVP
-- [ ] Category CRU(D)
+- [x] Category CRU(D)
 - [ ] Assigning (flat: "Phoenix / Auth") categories to packages
 - [ ] Update packages on a schedule [1](http://stackoverflow.com/a/32097971/6962)
 
 ### Pre-launch
 - [x] List package descriptions
 - [x] Exception logging
-- [ ] Verify all packages are synced (e.g. count them)
+- [x] Verify all packages are synced (e.g. count them)
 - [ ] Prettify
-- [ ] Look into VPS memory usage
 - [ ] Honeypot for categories to avoid spam?
 
 ### Nice-to-have
@@ -74,8 +73,6 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [ ] Slim
 - [ ] CI
 - [ ] Favicon
-- [ ] Conditional GETs for API sync
-- [ ] GitHub auth?
 
 
 ## License and credits
