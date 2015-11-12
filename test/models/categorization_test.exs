@@ -4,8 +4,6 @@ defmodule Toolbox.CategorizationTest do
   alias Toolbox.Repo
   alias Toolbox.Factory
   alias Toolbox.Categorization
-  alias Toolbox.Package
-  alias Toolbox.Category
 
   @valid_attrs %{package_id: 1, category_id: 2}
   @invalid_attrs %{}
@@ -20,15 +18,15 @@ defmodule Toolbox.CategorizationTest do
     refute changeset.valid?
   end
 
+  # For some confidence that the many-to-many association is set up correctly.
   # TODO: Is this the right place to test these things?
-  # We can probably remove this test anyway.
   test "associations work" do
     categorization = Factory.create(:categorization)
 
-    assert %Package{} = categorization.package
-    assert %Category{} = categorization.category
+    package = categorization.package |> Repo.preload(:categories)
+    category = categorization.category |> Repo.preload(:packages)
 
-    package = Repo.get(Package, categorization.package.id) |> Repo.preload(:categories)
     assert package.categories == [categorization.category]
+    assert category.packages == [categorization.package]
   end
 end
