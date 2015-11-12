@@ -22,7 +22,7 @@ config :logger, level: :info
 config :toolbox,
   :package_syncer, Toolbox.PackageSync
 
-# Handle errors outside of web requests.
+# Handle errors outside of web requests, i.e. in PackageSyncWorker.
 config :honeybadger,
   use_logger: true
 
