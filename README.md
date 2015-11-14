@@ -56,7 +56,8 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 
 ### MVP
 - [x] Category CRU(D)
-- [ ] Assigning (flat: "Phoenix / Auth") categories to packages
+- [x] Assigning (flat: "Phoenix / Auth") categories to packages
+- [ ] Show grouped by category
 - [x] Update packages on a schedule
 
 ### Pre-launch
@@ -65,10 +66,11 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [x] Verify all packages are synced (e.g. count them)
 - [ ] Rename? "Beambox"?
 - [ ] Prettify
+- [ ] Improve UX
 - [ ] Honeypot for categories to avoid spam?
 
 ### Nice-to-have
-- More integrated tests. Hound?
+- [ ] More integrated tests. Hound?
 - [ ] Show stats from Hex
 - [ ] Show stats from GitHub
 - [ ] Sass
