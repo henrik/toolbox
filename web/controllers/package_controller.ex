@@ -7,10 +7,11 @@ defmodule Toolbox.PackageController do
   plug :scrub_params, "package" when action in [:update]
 
   def index(conn, _params) do
-    packages = Repo.all(Package.sort_by_name)
     packages_count = Repo.one(Package.count)
 
-    render(conn, "index.html", packages: packages, packages_count: packages_count)
+    render conn, "index.html",
+      categories_with_packages: Repo.categories_with_packages,
+      packages_count: packages_count
   end
 
   def edit(conn, %{"id" => name}) do
@@ -31,5 +32,4 @@ defmodule Toolbox.PackageController do
     |> put_flash(:info, "Package categorized!")
     |> redirect(to: package_path(conn, :index))
   end
-
 end

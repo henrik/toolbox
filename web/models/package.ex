@@ -1,6 +1,5 @@
 defmodule Toolbox.Package do
   use Toolbox.Web, :model
-  require Ecto.Query
 
   schema "packages" do
     field :name, :string
@@ -30,14 +29,20 @@ defmodule Toolbox.Package do
     |> unique_constraint(:name)
   end
 
-  def sort_by_name(query \\ Toolbox.Package) do
+  def sort_by_name(query \\ __MODULE__) do
     Ecto.Query.from p in query,
       order_by: [asc: p.name]
   end
 
-  def with_categories(query \\ Toolbox.Package) do
+  def with_categories(query \\ __MODULE__) do
     Ecto.Query.from p in query,
       preload: :categories
+  end
+
+  def uncategorized(query \\ __MODULE__) do
+    Ecto.Query.from p in query,
+      left_join: c in assoc(p, :categorizations),
+      where: is_nil(c.package_id)
   end
 
   def count do

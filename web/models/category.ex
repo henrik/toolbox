@@ -26,8 +26,23 @@ defmodule Toolbox.Category do
     |> cast(params, @required_fields, @optional_fields)
   end
 
-  def sort_by_name(query \\ Toolbox.Category) do
+  def uncategorized_category(packages) do
+    %__MODULE__{
+      name: "Uncategorized",
+      packages: packages,
+    }
+  end
+
+  def sort_by_name(query \\ __MODULE__) do
     Ecto.Query.from c in query,
       order_by: [asc: c.name]
+  end
+
+  def sorted_with_sorted_packages(query \\ __MODULE__) do
+    Ecto.Query.from c in query,
+      join: p in assoc(c, :packages),
+      distinct: true,
+      preload: [packages: p],
+      order_by: [asc: c.name, asc: p.name]
   end
 end
