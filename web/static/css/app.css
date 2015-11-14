@@ -25,5 +25,9 @@ footer {
   margin-top: 10px;
 }
 
+.package-edit__description {
+  font-style: italic;
+}
+
 /* Phoenix flash messages */
 .alert:empty { display: none; }
