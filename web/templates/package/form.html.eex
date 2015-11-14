@@ -14,8 +14,7 @@
     <%=
       multiple_select f, :categories, categories_for_select(@all_categories),
       value: Enum.map(@package.categories, &(&1.id)),
-      class: "form-control",
-      style: "width: 200px"
+      class: "package-edit__select"
     %>
   </div>
 

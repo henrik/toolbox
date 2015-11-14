@@ -5,6 +5,21 @@ body {
   font-family: "Actor", sans-serif;
 }
 
+input,
+button,
+select
+{
+  font-family: inherit;
+  font-size: inherit;
+}
+
+select {
+  padding: 0;
+}
+option {
+  padding: 3px 5px;
+}
+
 header {
   margin-bottom: 30px;
 }
@@ -25,8 +40,18 @@ footer {
   margin-top: 10px;
 }
 
+.form-group {
+  margin: 15px 0;
+}
+
 .package-edit__description {
   font-style: italic;
+}
+
+.package-edit__select {
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
 }
 
 /* Phoenix flash messages */
