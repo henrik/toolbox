@@ -1,16 +1,18 @@
-<p>Listing <%= @packages_count %> packages.</p>
+<p class="intro-text">Listing <%= @packages_count %> packages.</p>
 
 <%= for category <- @categories_with_packages do %>
-  <h2><%= category.name %></h2>
+  <h2 class="category-name"><%= category.name %></h2>
 
-  <table>
+  <table class="packages">
     <%= for package <- category.packages do %>
       <tr>
         <td>
           <a href="<%= hex_url(package) %>"><%= package.name %></a>
-          (<a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>)
-        </tt>
+        </td>
         <td><%= package.description %></td>
+        <td class="align-right">
+          <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
+        </td>
       </tr>
     <% end %>
   </table>

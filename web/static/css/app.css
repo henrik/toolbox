@@ -3,6 +3,8 @@ body {
   background: #fff;
   color: #333;
   font-family: "Actor", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 input,
@@ -22,14 +24,33 @@ option {
 
 header {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 footer {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
-.site-header {
+table {
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+}
+
+.intro-text {
+  text-align: center;
+  font-style: italic;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.site-heading {
   font-size: 40px;
   margin-bottom: 0;
 }
@@ -42,6 +63,26 @@ footer {
 
 .form-group {
   margin: 15px 0;
+}
+
+form.link {
+  display: inline;
+}
+
+.packages {
+  border-collapse: collapse;
+}
+
+.packages td {
+  padding: 5px;
+}
+
+.packages tr:hover td {
+  background: #eee;
+}
+
+.category-name {
+  margin: 35px 0 10px;
 }
 
 .package-edit__description {

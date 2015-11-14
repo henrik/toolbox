@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <h1 class="site-header"><%= title %></h1>
+      <h1 class="site-heading"><%= title %></h1>
 
       <p class="site-description">
       [WIP!] A categorized catalog of Hex packages for Elixir and the Erlang ecosystem<!--TODO: with popularity ratings from Hex and GitHub -->.
