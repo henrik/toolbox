@@ -4,7 +4,9 @@ defmodule Toolbox.Category do
   schema "categories" do
     field :name, :string
 
-    has_many :categorizations, Toolbox.Categorization
+    has_many :categorizations, Toolbox.Categorization,
+      on_delete: :delete_all
+
     has_many :packages, through: [:categorizations, :package]
 
     timestamps
