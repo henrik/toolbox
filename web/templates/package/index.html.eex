@@ -3,7 +3,10 @@
 <table>
   <%= for package <- @packages do %>
     <tr>
-      <td><a href="<%= hex_url(package) %>"><%= package.name %></a></dt>
+      <td>
+        <a href="<%= hex_url(package) %>"><%= package.name %></a>
+        (<a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>)
+      </tt>
       <td><%= package.description %></td>
     </tr>
   <% end %>

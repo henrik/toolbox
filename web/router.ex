@@ -18,7 +18,7 @@ defmodule Toolbox.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PackageController, :index
-    resources "/packages", PackageController
+    resources "/packages", PackageController, only: [:edit, :update]
     resources "/categories", CategoryController
   end
 

@@ -1,0 +1,8 @@
+<h2>Select categories for <em><%= @package.name %></em></h2>
+
+<%= render "form.html",
+  changeset: @changeset,
+  package: @package,
+  all_categories: @all_categories,
+  action: package_path(@conn, :update, @package)
+%>

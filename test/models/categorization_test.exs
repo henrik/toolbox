@@ -19,7 +19,6 @@ defmodule Toolbox.CategorizationTest do
   end
 
   # For some confidence that the many-to-many association is set up correctly.
-  # TODO: Is this the right place to test these things?
   test "associations work" do
     categorization = Factory.create(:categorization)
 
@@ -28,5 +27,36 @@ defmodule Toolbox.CategorizationTest do
 
     assert package.categories == [categorization.category]
     assert category.packages == [categorization.package]
+  end
+
+  test ".categorize" do
+    _package_a = Factory.create(:package)
+    package_b = Factory.create(:package)
+
+    category_a = Factory.create(:category)
+    category_b = Factory.create(:category)
+    category_c = Factory.create(:category)
+
+    Categorization.categorize(package_b, [category_a.id, category_b.id])
+
+    assert get_categorizations == [
+      [ package_b.id, category_a.id ],
+      [ package_b.id, category_b.id ],
+    ]
+
+    Categorization.categorize(package_b, [category_a.id, category_c.id])
+
+    assert get_categorizations == [
+      [ package_b.id, category_a.id ],
+      [ package_b.id, category_c.id ],
+    ]
+  end
+
+  defp get_categorizations do
+    Repo.all(
+      from c in Categorization,
+        select: [c.package_id, c.category_id],
+        order_by: [asc: c.package_id, asc: c.category_id]
+    )
   end
 end

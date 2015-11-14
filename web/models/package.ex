@@ -33,6 +33,11 @@ defmodule Toolbox.Package do
       order_by: [asc: p.name]
   end
 
+  def with_categories(query \\ Toolbox.Package) do
+    Ecto.Query.from p in query,
+      preload: :categories
+  end
+
   def count do
     Ecto.Query.from p in Toolbox.Package,
       select: count(p.id)

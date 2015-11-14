@@ -23,4 +23,9 @@ defmodule Toolbox.Category do
     model
     |> cast(params, @required_fields, @optional_fields)
   end
+
+  def sort_by_name(query \\ Toolbox.Category) do
+    Ecto.Query.from c in query,
+      order_by: [asc: c.name]
+  end
 end

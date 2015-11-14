@@ -1,6 +1,10 @@
 defmodule Toolbox.PackageController do
   use Toolbox.Web, :controller
   alias Toolbox.Package
+  alias Toolbox.Category
+  alias Toolbox.Categorization
+
+  plug :scrub_params, "package" when action in [:update]
 
   def index(conn, _params) do
     packages = Repo.all(Package.sort_by_name)
@@ -8,4 +12,24 @@ defmodule Toolbox.PackageController do
 
     render(conn, "index.html", packages: packages, packages_count: packages_count)
   end
+
+  def edit(conn, %{"id" => name}) do
+    package = Repo.get_by!(Package.with_categories, name: name)
+    all_categories = Repo.all(Category.sort_by_name)
+
+    changeset = Package.changeset(package)
+    render(conn, "edit.html", package: package, all_categories: all_categories, changeset: changeset)
+  end
+
+  def update(conn, %{"id" => id, "package" => %{ "categories" => cids }}) do
+    package = Repo.get!(Package, id)
+    category_ids = Enum.map cids, &String.to_integer/1
+
+    Categorization.categorize(package, category_ids)
+
+    conn
+    |> put_flash(:info, "Package categorized!")
+    |> redirect(to: package_path(conn, :index))
+  end
+
 end
