@@ -12,12 +12,12 @@ defmodule Toolbox.CategoryControllerTest do
 
   test "lists all entries on index", %{conn: conn} do
     conn = get conn, category_path(conn, :index)
-    assert html_response(conn, 200) =~ "Listing categories"
+    assert html_response(conn, 200) =~ "Categories"
   end
 
   test "renders form for new resources", %{conn: conn} do
     conn = get conn, category_path(conn, :new)
-    assert html_response(conn, 200) =~ "New category"
+    assert html_response(conn, 200) =~ "Add category"
   end
 
   test "creates resource and redirects when data is valid", %{conn: conn} do
@@ -28,7 +28,7 @@ defmodule Toolbox.CategoryControllerTest do
 
   test "does not create resource and renders errors when data is invalid", %{conn: conn} do
     conn = post conn, category_path(conn, :create), category: @invalid_attrs
-    assert html_response(conn, 200) =~ "New category"
+    assert html_response(conn, 200) =~ "Add category"
   end
 
   test "shows chosen resource", %{conn: conn} do
