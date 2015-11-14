@@ -64,6 +64,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [x] List package descriptions
 - [x] Exception logging
 - [x] Verify all packages are synced (e.g. count them)
+- [ ] ToC
 - [ ] Page titles
 - [ ] Rename? "Beambox"?
 - [ ] Prettify
