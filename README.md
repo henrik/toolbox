@@ -68,6 +68,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [ ] Honeypot for categories to avoid spam?
 
 ### Nice-to-have
+- More integrated tests. Hound?
 - [ ] Show stats from Hex
 - [ ] Show stats from GitHub
 - [ ] Sass
