@@ -75,6 +75,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [ ] Slim
 - [ ] Favicon
 - [ ] CI
+- [ ] Handle renamed/removed packages
 
 
 ## License and credits
