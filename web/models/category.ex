@@ -28,6 +28,7 @@ defmodule Toolbox.Category do
 
   def uncategorized_category(packages) do
     %__MODULE__{
+      id: 0,
       name: "Uncategorized",
       packages: packages,
     }

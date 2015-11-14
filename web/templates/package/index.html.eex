@@ -1,7 +1,13 @@
 <p class="intro-text">Listing <%= @packages_count %> packages.</p>
 
+<ul>
+  <%= for category <- @categories_with_packages do %>
+    <li><a href="#<%= anchor(category) %>"><%= category.name %></a></li>
+  <% end %>
+</ul>
+
 <%= for category <- @categories_with_packages do %>
-  <h2 class="category-name"><%= category.name %></h2>
+  <h2 class="category-name" id="<%= anchor(category) %>"><%= category.name %></h2>
 
   <table class="packages">
     <%= for package <- category.packages do %>
