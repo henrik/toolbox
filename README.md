@@ -57,15 +57,17 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 ### MVP
 - [x] Category CRU(D)
 - [x] Assigning (flat: "Phoenix / Auth") categories to packages
-- [ ] Show grouped by category
+- [x] Show grouped by category
 - [x] Update packages on a schedule
 
 ### Pre-launch
 - [x] List package descriptions
 - [x] Exception logging
 - [x] Verify all packages are synced (e.g. count them)
+- [ ] Page titles
 - [ ] Rename? "Beambox"?
 - [ ] Prettify
+  - [ ] Make categorize an icon
 - [ ] Improve UX
 - [ ] Honeypot for categories to avoid spam?
 
