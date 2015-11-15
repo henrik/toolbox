@@ -91,6 +91,12 @@ Mostly as any Dokku app. Worth pointing out:
 - [ ] Handle renamed/removed packages
 
 
+## Inspired by
+
+* [Awesome Elixir](https://github.com/h4cc/awesome-elixir)
+* [The Ruby Toolbox](https://www.ruby-toolbox.com/)
+
+
 ## License and credits
 
 By Henrik Nyh 2015-11-08 under the MIT license.
