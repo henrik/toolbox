@@ -22,11 +22,15 @@ Then:
 
     mix deps.get
     mix ecto.setup
-    mix phoenix.server
+    npm install
 
 Populate the database from the Hex API:
 
     mix run -e "Toolbox.PackageSync.run"
+
+And start the web server:
+
+    mix phoenix.server
 
 Now visit <http://localhost:4000>.
 
