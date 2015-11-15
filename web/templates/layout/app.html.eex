@@ -15,7 +15,8 @@
       <h1 class="site-heading"><%= site_name %></h1>
 
       <p class="site-description">
-      [WIP!] A categorized catalog of Hex packages for Elixir and the Erlang ecosystem<!--TODO: with popularity ratings from Hex and GitHub -->.
+        <a href="https://github.com/henrik/toolbox#status">[WIP!]</a>
+        A categorized catalog of Hex packages for Elixir and the Erlang ecosystem<!--TODO: with popularity ratings from Hex and GitHub -->.
       </p>
 
       <p>
