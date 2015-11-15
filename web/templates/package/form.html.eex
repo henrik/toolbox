@@ -18,6 +18,10 @@
     %>
   </div>
 
+  <p>
+    Need to <%= link "add a category", to: category_path(@conn, :new) %>?
+  </p>
+
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>

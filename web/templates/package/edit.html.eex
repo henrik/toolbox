@@ -8,5 +8,6 @@
   changeset: @changeset,
   package: @package,
   all_categories: @all_categories,
+  conn: @conn,
   action: package_path(@conn, :update, @package)
 %>
