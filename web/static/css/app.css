@@ -46,6 +46,16 @@ td, th {
   font-style: italic;
 }
 
+.toc {
+  padding-left: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.toc__entry {
+  line-height: 30px;
+}
+
 .align-right {
   text-align: right;
 }

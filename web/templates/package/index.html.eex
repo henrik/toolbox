@@ -1,8 +1,8 @@
 <p class="intro-text">Listing <%= @packages_count %> packages.</p>
 
-<ul>
+<ul class="toc">
   <%= for category <- @categories_with_packages do %>
-    <li><a href="#<%= anchor(category) %>"><%= category.name %></a></li>
+    <li class="toc__entry"><a href="#<%= anchor(category) %>"><%= category.name %></a></li>
   <% end %>
 </ul>
 
