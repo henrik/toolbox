@@ -93,6 +93,11 @@ td, th {
   margin-bottom: 0;
 }
 
+.site-heading a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .site-description {
   font-size: 25px;
   color: #888;

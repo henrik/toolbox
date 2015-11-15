@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <h1 class="site-heading"><%= site_name %></h1>
+      <h1 class="site-heading"><a href="/">The BEAM Toolbox</a></h1>
 
       <p class="site-description">
         <a href="https://github.com/henrik/toolbox#status">[WIP!]</a>
