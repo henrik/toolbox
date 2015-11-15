@@ -6,7 +6,7 @@ defmodule Toolbox.CategoryController do
   plug :scrub_params, "category" when action in [:create, :update]
 
   def index(conn, _params) do
-    categories = Repo.all(Category)
+    categories = Repo.all(Category.sort_by_name)
 
     conn
     |> assign(:page_title, "Manage categories")
