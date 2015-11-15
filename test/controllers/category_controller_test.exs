@@ -12,7 +12,7 @@ defmodule Toolbox.CategoryControllerTest do
 
   test "lists all entries on index", %{conn: conn} do
     conn = get conn, category_path(conn, :index)
-    assert html_response(conn, 200) =~ "Categories"
+    assert html_response(conn, 200) =~ "Manage categories"
   end
 
   test "renders form for new resources", %{conn: conn} do
@@ -31,35 +31,23 @@ defmodule Toolbox.CategoryControllerTest do
     assert html_response(conn, 200) =~ "Add category"
   end
 
-  test "shows chosen resource", %{conn: conn} do
-    category = Repo.insert! %Category{}
-    conn = get conn, category_path(conn, :show, category)
-    assert html_response(conn, 200) =~ "Show category"
-  end
-
-  test "renders page not found when id is nonexistent", %{conn: conn} do
-    assert_raise Ecto.NoResultsError, fn ->
-      get conn, category_path(conn, :show, -1)
-    end
-  end
-
   test "renders form for editing chosen resource", %{conn: conn} do
     category = Repo.insert! %Category{}
     conn = get conn, category_path(conn, :edit, category)
-    assert html_response(conn, 200) =~ "Edit category"
+    assert html_response(conn, 200) =~ "Edit"
   end
 
   test "updates chosen resource and redirects when data is valid", %{conn: conn} do
     category = Repo.insert! %Category{}
     conn = put conn, category_path(conn, :update, category), category: @valid_attrs
-    assert redirected_to(conn) == category_path(conn, :show, category)
+    assert redirected_to(conn) == category_path(conn, :index)
     assert Repo.get_by(Category, @valid_attrs)
   end
 
   test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
     category = Repo.insert! %Category{}
     conn = put conn, category_path(conn, :update, category), category: @invalid_attrs
-    assert html_response(conn, 200) =~ "Edit category"
+    assert html_response(conn, 200) =~ "Edit"
   end
 
   test "deletes chosen resource", %{conn: conn} do
