@@ -15,11 +15,23 @@ select
   font-size: inherit;
 }
 
+input[type=text] {
+  padding: 5px;
+  width: 100%;
+  max-width: 500px;
+}
+
 select {
   padding: 0;
 }
+
 option {
   padding: 3px 5px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 0.5em;
 }
 
 header {
