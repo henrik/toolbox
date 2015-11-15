@@ -47,6 +47,14 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 
     script/deploy
 
+## How it was set up
+
+Mostly as any Dokku app. Worth pointing out:
+
+    # Fix deploy warning:
+    # "warning: the VM is running with native name encoding of latin1 which may cause Elixir to malfunction as it expects utf8. Please ensure your locale is set to UTF-8 (which can be verified by running "locale" in your shell)"
+    dokku config:set toolbox LC_ALL=en_US.utf8
+
 
 ## TODO:
 
