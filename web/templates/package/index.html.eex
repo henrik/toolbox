@@ -10,7 +10,7 @@
   <section class="category-section">
     <h2 class="category-heading" id="<%= anchor(category) %>"><%= category.name %></h2>
 
-    <table class="packages">
+    <table class="table">
       <%= for package <- category.packages do %>
         <tr>
           <td>

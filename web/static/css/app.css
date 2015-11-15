@@ -79,15 +79,15 @@ form.link {
   display: inline;
 }
 
-.packages {
+.table {
   border-collapse: collapse;
 }
 
-.packages td {
+.table td {
   padding: 5px;
 }
 
-.packages tr:hover td {
+.table tr:hover td {
   background: #eee;
 }
 
