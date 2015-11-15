@@ -9,11 +9,9 @@ Inspired by <http://ruby-toolbox.com>. Name borrowed from Josh Adams of [Elixir 
 
 ## Status
 
-WIP. See [TODOs](#todo).
+WIP: Categorizing works but isn't super smooth; not pretty; not many fancy features. See [TODOs](#todo).
 
-Feedback super welcome; major code contributions currently not desired:
-
-Since I'm doing this in part to learn Phoenix, I **might not accept pull requests** for things I'd rather implement myself. Once the basic functionality is there, this will change.
+Contributions welcome.
 
 
 ## Development
