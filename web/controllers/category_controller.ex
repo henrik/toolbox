@@ -7,12 +7,18 @@ defmodule Toolbox.CategoryController do
 
   def index(conn, _params) do
     categories = Repo.all(Category)
-    render(conn, "index.html", categories: categories)
+
+    conn
+    |> assign(:page_title, "Manage categories")
+    |> render("index.html", categories: categories)
   end
 
   def new(conn, _params) do
     changeset = Category.changeset(%Category{})
-    render(conn, "new.html", changeset: changeset)
+
+    conn
+    |> assign(:page_title, "Add category")
+    |> render("new.html", changeset: changeset)
   end
 
   def create(conn, %{"category" => category_params}) do
@@ -36,7 +42,10 @@ defmodule Toolbox.CategoryController do
   def edit(conn, %{"id" => id}) do
     category = Repo.get!(Category, id)
     changeset = Category.changeset(category)
-    render(conn, "edit.html", category: category, changeset: changeset)
+
+    conn
+    |> assign(:page_title, "Edit \"#{category.name}\"")
+    |> render("edit.html", category: category, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "category" => category_params}) do

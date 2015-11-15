@@ -73,7 +73,7 @@ Mostly as any Dokku app. Worth pointing out:
 - [x] Exception logging
 - [x] Verify all packages are synced (e.g. count them)
 - [x] ToC
-- [ ] Page titles
+- [x] Page titles
 - [ ] Rename? "Beambox"?
 - [ ] Prettify
   - [ ] Make categorize an icon

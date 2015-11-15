@@ -19,7 +19,10 @@ defmodule Toolbox.PackageController do
     all_categories = Repo.all(Category.sort_by_name)
 
     changeset = Package.changeset(package)
-    render(conn, "edit.html", package: package, all_categories: all_categories, changeset: changeset)
+
+    conn
+    |> assign(:page_title, "Edit \"#{package.name}\"")
+    |> render("edit.html", package: package, all_categories: all_categories, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "package" => %{ "categories" => cids }}) do
