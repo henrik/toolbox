@@ -2,24 +2,26 @@
 
 <ul class="toc">
   <%= for category <- @categories_with_packages do %>
-    <li class="toc__entry"><a href="#<%= anchor(category) %>"><%= category.name %></a></li>
+    <li><a href="#<%= anchor(category) %>"><%= category.name %></a></li>
   <% end %>
 </ul>
 
 <%= for category <- @categories_with_packages do %>
-  <h2 class="category-name" id="<%= anchor(category) %>"><%= category.name %></h2>
+  <section class="category-section">
+    <h2 class="category-heading" id="<%= anchor(category) %>"><%= category.name %></h2>
 
-  <table class="packages">
-    <%= for package <- category.packages do %>
-      <tr>
-        <td>
-          <a href="<%= hex_url(package) %>"><%= package.name %></a>
-        </td>
-        <td><%= package.description %></td>
-        <td class="align-right">
-          <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+    <table class="packages">
+      <%= for package <- category.packages do %>
+        <tr>
+          <td>
+            <a href="<%= hex_url(package) %>"><%= package.name %></a>
+          </td>
+          <td><%= package.description %></td>
+          <td class="align-right">
+            <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </section>
 <% end %>
