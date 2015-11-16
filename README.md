@@ -16,7 +16,9 @@ Contributions welcome.
 
 ## Development
 
-You are expected to have Elixir and Postgres installed.
+You are expected to have Elixir, [Phoenix (including Node.js and npm)](http://www.phoenixframework.org/docs/installation) and Postgres installed.
+
+Then:
 
     mix deps.get
     mix ecto.setup
@@ -24,7 +26,7 @@ You are expected to have Elixir and Postgres installed.
 
 Populate the database from the Hex API:
 
-    mix run -e 'Toolbox.PackageSync.run'
+    mix run -e "Toolbox.PackageSync.run"
 
 Now visit <http://localhost:4000>.
 
