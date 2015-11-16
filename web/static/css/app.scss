@@ -1,7 +1,17 @@
+$white: #fff;
+$blackish: #333;
+$gray: #eee;
+
+$light-purple: #ec6dec;
+$purple: #c751c7;
+$dark-purple: #a03fa0;
+
+$border-color: $gray;
+
 body {
   padding: 20px;
-  background: #fff;
-  color: #333;
+  background: $white;
+  color: $blackish;
   font-family: "Actor", sans-serif;
   max-width: 1200px;
   margin: 0 auto;
@@ -23,18 +33,18 @@ input[type=text] {
 
 input[type=submit] {
   padding: 5px 10px;
-  border: 1px solid #a03fa0;
+  border: 1px solid $dark-purple;
   border-width: 1px 1px 3px 1px;
   border-radius: 3px;
-  background: #c751c7;
-  color: #fff;
+  background: $purple;
+  color: $white;
   font-weight: bold;
   text-transform: uppercase;
-}
 
-input[type=submit]:hover {
-  background: #ec6dec;
-  border-color: #c751c7;
+  &:hover {
+    background: $light-purple;
+    border-color: $purple;
+  }
 }
 
 select {
@@ -59,7 +69,7 @@ footer {
   text-align: center;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $border-color;
   margin-bottom: 30px;
 }
 
@@ -114,19 +124,19 @@ form.link {
 
 .table {
   border-collapse: collapse;
-}
 
-.table td {
-  padding: 5px;
-}
+  tr:hover td {
+    background: $gray;
+  }
 
-.table tr:hover td {
-  background: #eee;
+  td {
+    padding: 5px;
+  }
 }
 
 .category-section {
   margin: 20px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $border-color;
   padding: 20px 0;
 }
 
@@ -137,14 +147,16 @@ form.link {
   text-align: center;
 }
 
-.package-edit__description {
-  font-style: italic;
-}
+.package_edit {
+  &__description {
+    font-style: italic;
+  }
 
-.package-edit__select {
-  width: 100%;
-  max-width: 500px;
-  height: 200px;
+  &__select {
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+  }
 }
 
 /* Phoenix flash messages */

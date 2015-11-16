@@ -82,7 +82,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 - [ ] Show "last synced at"
 - [ ] Show stats from Hex
 - [ ] Show stats from GitHub
-- [ ] Sass
+- [x] Sass
 - [ ] Slim
 - [ ] Favicon
 - [ ] CI
