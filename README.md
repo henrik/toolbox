@@ -79,6 +79,7 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 
 ### Nice-to-have
 - [ ] More integrated tests. Hound?
+- [ ] Show "last synced at"
 - [ ] Show stats from Hex
 - [ ] Show stats from GitHub
 - [ ] Sass
