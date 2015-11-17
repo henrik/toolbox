@@ -46,6 +46,10 @@
     background: $gray;
   }
 
+  td, th {
+    vertical-align: top;
+  }
+
   td {
     padding: 5px;
   }
