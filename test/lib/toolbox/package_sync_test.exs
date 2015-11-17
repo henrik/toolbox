@@ -1,6 +1,5 @@
 defmodule Toolbox.PackageSyncTest do
   use ExUnit.Case
-  import ExUnit.CaptureIO
 
   # Run with DB transaction. Stolen from ConnCase.
   # TODO: Clean this up.
@@ -49,15 +48,11 @@ defmodule Toolbox.PackageSyncTest do
   test "it creates any new packages in DB" do
     assert package_names == []
 
-    silence_output fn ->
-      Toolbox.PackageSync.run(FakeHexClient.State1)
-    end
+    Toolbox.PackageSync.run(FakeHexClient.State1)
 
     assert package_names == ~w[a b c]
 
-    silence_output fn ->
-      Toolbox.PackageSync.run(FakeHexClient.State2)
-    end
+    Toolbox.PackageSync.run(FakeHexClient.State2)
 
     assert package_names == ~w[a b c d e]
 
@@ -65,9 +60,7 @@ defmodule Toolbox.PackageSyncTest do
     assert first_package.description == "A."
     assert first_package.hex_updated_at == parse_datetime("2001-01-01T00:00:00Z")
 
-    silence_output fn ->
-      Toolbox.PackageSync.run(FakeHexClient.State3)
-    end
+    Toolbox.PackageSync.run(FakeHexClient.State3)
 
     assert package_names == ~w[a b c d e f]
 
@@ -75,8 +68,6 @@ defmodule Toolbox.PackageSyncTest do
     assert first_package.description == "Updated A."
     assert first_package.hex_updated_at == parse_datetime("2005-01-01T00:00:00Z")
   end
-
-  defp silence_output(fun), do: capture_io(fun)
 
   defp first_package, do: load_packages |> hd
   defp package_names, do: load_packages |> Enum.map &(&1.name)
