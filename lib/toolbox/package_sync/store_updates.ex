@@ -46,8 +46,9 @@ defmodule Toolbox.PackageSync.StoreUpdates do
 
   defp changes_from_data(data) do
     %{
-      name: data["name"],
-      description: data["meta"]["description"],
+      name:           data["name"],
+      description:    data["meta"]["description"],
+      licenses:       data["meta"]["licenses"] || [],
       hex_updated_at: data["updated_at"],
     }
   end

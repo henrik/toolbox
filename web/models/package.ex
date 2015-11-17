@@ -4,6 +4,7 @@ defmodule Toolbox.Package do
   schema "packages" do
     field :name, :string
     field :description, :string
+    field :licenses, {:array, :string}, default: []
     field :hex_updated_at, Ecto.DateTime
 
     has_many :categorizations, Toolbox.Categorization,
@@ -15,7 +16,7 @@ defmodule Toolbox.Package do
   end
 
   @required_fields ~w(name hex_updated_at)
-  @optional_fields ~w(description)
+  @optional_fields ~w(description licenses)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

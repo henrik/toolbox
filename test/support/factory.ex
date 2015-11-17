@@ -13,6 +13,7 @@ defmodule Toolbox.Factory do
     %Package{
       name: sequence(:name, &"package#{&1}"),
       description: "A package.",
+      licenses: ["MIT"],
       hex_updated_at: cast_time,
     }
   end
