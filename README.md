@@ -94,6 +94,11 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 * [Awesome Elixir](https://github.com/h4cc/awesome-elixir)
 * [The Ruby Toolbox](https://www.ruby-toolbox.com/)
 
+## Possible future inspirations
+
+* [Libraries.io](https://libraries.io/)
+* [Ember Observer](http://emberobserver.com/)
+
 
 ## License and credits
 
