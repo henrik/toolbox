@@ -1,0 +1,72 @@
+body {
+  padding: 20px;
+  background: $white;
+  color: $blackish;
+  font-family: "Actor", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+input,
+button,
+select
+{
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input[type=text] {
+  padding: 5px;
+  width: 100%;
+  max-width: 500px;
+}
+
+input[type=submit] {
+  padding: 5px 10px;
+  border: 1px solid $dark-purple;
+  border-width: 1px 1px 3px 1px;
+  border-radius: 3px;
+  background: $purple;
+  color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $light-purple;
+    border-color: $purple;
+  }
+}
+
+select {
+  padding: 0;
+}
+
+option {
+  padding: 3px 5px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid $border-color;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+}
