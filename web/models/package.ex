@@ -4,7 +4,7 @@ defmodule Toolbox.Package do
   schema "packages" do
     field :name, :string
     field :description, :string
-    field :licenses, {:array, :string}, default: []
+    #field :licenses, {:array, :string}, default: []
     field :hex_updated_at, Ecto.DateTime
 
     has_many :categorizations, Toolbox.Categorization,
