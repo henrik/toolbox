@@ -4,7 +4,7 @@ defmodule Toolbox.Repo.Migrations.AssignLicensesToExistingPackages do
 
   def change do
     # Migrations don't seem to run in the context of the Toolbox app, so we need to start this manually for the Hex client.
-    HTTPotion.start
+    :ok = Application.ensure_started(:ibrowse)
 
     update_from_page(1)
   end
