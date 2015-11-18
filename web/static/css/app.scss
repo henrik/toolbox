@@ -68,6 +68,18 @@
   text-align: center;
 }
 
+.package__licenses {
+  margin-top: 3px;
+
+  &__license {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px;
+    background: $blackish;
+    color: $white;
+  }
+}
+
 .package-edit {
   &__description {
     font-style: italic;

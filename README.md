@@ -76,8 +76,12 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
   - [ ] Make categorize an icon
 - [ ] Improve UX
 - [ ] Honeypot for categories to avoid spam?
+- [ ] Per-category pages (not one long page)
 
 ### Nice-to-have
+- [ ] Show links from Hex
+- [ ] Normalize licenses
+- [ ] Color-code licenses
 - [ ] More integrated tests. Hound?
 - [ ] Show "last synced at"
 - [ ] Show stats from Hex

@@ -13,6 +13,9 @@ defmodule Toolbox.PackageView do
     end
   end
 
+  def licenses_or_unknown([]), do: ["?"]
+  def licenses_or_unknown(licenses), do: licenses
+
   def anchor(%Category{id: id}) do
     "p-#{id}"
   end
