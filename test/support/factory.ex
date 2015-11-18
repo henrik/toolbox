@@ -5,9 +5,9 @@ defmodule Toolbox.Factory do
   alias Toolbox.Category
   alias Toolbox.Categorization
 
-  def factory(:package, attrs) do
+  def factory(:package) do
     # :/ https://github.com/thoughtbot/ex_machina/issues/54
-    time = Dict.get(attrs, :hex_updated_at, "2001-02-03T04:05:06Z")
+    time = "2001-02-03T04:05:06Z"
     {:ok, cast_time} = Ecto.DateTime.cast(time)
 
     %Package{
@@ -18,16 +18,16 @@ defmodule Toolbox.Factory do
     }
   end
 
-  def factory(:category, _attrs) do
+  def factory(:category) do
     %Category{
       name: sequence(:name, &"Category #{&1}"),
     }
   end
 
-  def factory(:categorization, attrs) do
+  def factory(:categorization) do
     %Categorization{
-      package: assoc(attrs, :package),
-      category: assoc(attrs, :category),
+      package: build(:package),
+      category: build(:category),
     }
   end
 end

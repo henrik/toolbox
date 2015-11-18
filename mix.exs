@@ -19,7 +19,7 @@ defmodule Toolbox.Mixfile do
   def application do
     [
       mod: {Toolbox, []},
-      applications: app_list(Mix.env),
+      applications: app_list,
     ]
   end
 
@@ -33,12 +33,6 @@ defmodule Toolbox.Mixfile do
       :httpotion,
     ]
   end
-  defp app_list(:test) do
-    [
-      :ex_machina,
-    ] ++ app_list
-  end
-  defp app_list(_),  do: app_list
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
@@ -63,7 +57,7 @@ defmodule Toolbox.Mixfile do
 
       {:phoenix_live_reload, "~> 1.0", only: :dev},
 
-      {:ex_machina, "~> 0.4", only: :test},
+      {:ex_machina, "> 0.0.0"},
     ]
   end
 
