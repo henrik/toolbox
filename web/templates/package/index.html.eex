@@ -15,15 +15,8 @@
         <tr>
           <td>
             <a href="<%= hex_url(package) %>"><%= package.name %></a>
-            <div class="package__licenses">
-              <%= licenses_or_unknown(package.licenses) |> Enum.map fn license -> %>
-                <span class="package__licenses__license"><%= license %></span>
-              <% end %>
-            </div>
           </td>
-          <td>
-            <%= package.description %>
-          </td>
+          <td><%= package.description %></td>
           <td class="align-right">
             <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
           </td>
