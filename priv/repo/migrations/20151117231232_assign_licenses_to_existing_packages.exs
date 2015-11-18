@@ -3,10 +3,16 @@ defmodule Toolbox.Repo.Migrations.AssignLicensesToExistingPackages do
   import Ecto.Query
 
   def change do
-    # Migrations don't seem to run in the context of the Toolbox app, so we need to start this manually for the Hex client.
-    :ok = Application.ensure_started(:ibrowse)
+    # To speed up dev, only do something if there are records to migrate.
+    count = Toolbox.Repo.one(from(p in Toolbox.Package, select: count(p.id)))
+    if count == 0 do
+      IO.puts "No packages in DB, so not assigning licenses"
+    else
+      # Migrations don't seem to run in the context of the Toolbox app, so we need to start this manually for the Hex client.
+      :ok = Application.ensure_started(:ibrowse)
 
-    update_from_page(1)
+      update_from_page(1)
+    end
   end
 
   defp update_from_page(page) do
