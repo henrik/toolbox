@@ -46,8 +46,8 @@ defmodule Toolbox.Package do
       where: is_nil(c.package_id)
   end
 
-  def count do
-    Ecto.Query.from p in Toolbox.Package,
+  def count(query \\ __MODULE__) do
+    Ecto.Query.from p in query,
       select: count(p.id)
   end
 

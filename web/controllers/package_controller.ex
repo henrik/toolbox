@@ -8,10 +8,12 @@ defmodule Toolbox.PackageController do
 
   def index(conn, _params) do
     packages_count = Repo.one(Package.count)
+    uncategorized_count = Repo.one(Package.uncategorized |> Package.count)
 
     render conn, "index.html",
       categories_with_packages: Repo.categories_with_packages,
-      packages_count: packages_count
+      packages_count: packages_count,
+      uncategorized_count: uncategorized_count
   end
 
   def edit(conn, %{"id" => name}) do

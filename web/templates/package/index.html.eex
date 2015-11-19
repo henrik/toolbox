@@ -1,4 +1,10 @@
-<p class="intro-text">Listing <%= @packages_count %> packages.</p>
+<p class="intro-text">
+  <%= if @uncategorized_count > 0 do %>
+    Listing <%= @packages_count %> packages; <a href="#p-0"><%= @uncategorized_count %> to categorize</a>.
+  <% else %>
+    Listing <%= @packages_count %> packages.
+  <% end %>
+</p>
 
 <ul class="toc">
   <%= for category <- @categories_with_packages do %>
