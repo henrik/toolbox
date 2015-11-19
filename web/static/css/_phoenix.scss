@@ -4,3 +4,11 @@ form.link {
 
 /* Flash messages */
 .alert:empty { display: none; }
+
+.alert-info {
+  color: #080;
+  background: #c4ffc4;
+  text-shadow: 1px 1px 1px #fff;
+  font-weight: bold;
+  padding: 10px;
+}
