@@ -50,6 +50,7 @@ defmodule Toolbox.Mixfile do
       {:cowboy, "~> 1.0"},
       {:poison, "> 0.0.0"},
       {:honeybadger, "~> 0.1"},
+      {:ectoo, "> 0.0.0"},
 
       # For HexClient.
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},

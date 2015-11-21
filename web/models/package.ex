@@ -47,8 +47,7 @@ defmodule Toolbox.Package do
   end
 
   def count(query \\ __MODULE__) do
-    Ecto.Query.from p in query,
-      select: count(p.id)
+    Ectoo.count(query)
   end
 
   def newest_hex_updated_at_with_names do
