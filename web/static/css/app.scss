@@ -79,3 +79,23 @@
     height: 200px;
   }
 }
+
+.package__name {
+  font-weight: bold;
+}
+
+.package__description_etc {
+  p {
+    margin: 0;
+  }
+}
+
+.package__links {
+  a {
+    margin-right: 0.5em;
+    &:last-child { margin-right: 0; }
+
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

@@ -19,10 +19,18 @@
     <table class="table">
       <%= for package <- category.packages do %>
         <tr>
-          <td>
-            <a href="<%= hex_url(package) %>"><%= package.name %></a>
+          <td class="package__name">
+            <%= package.name %>
           </td>
-          <td><%= package.description %></td>
+          <td class="package__description_etc">
+            <p><%= package.description %></p>
+            <p class="package__links">
+              <%= link "Hex", to: hex_url(package) %>
+              <%= for {name, value} <- package.links do %>
+                <%= link name, to: value %>
+              <% end %>
+            </p>
+          </td>
           <td class="align-right">
             <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
           </td>
