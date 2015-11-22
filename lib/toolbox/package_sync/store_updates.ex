@@ -49,6 +49,7 @@ defmodule Toolbox.PackageSync.StoreUpdates do
       name:           data["name"],
       description:    data["meta"]["description"],
       licenses:       Dict.get(data["meta"], "licenses", []),
+      links:          Dict.get(data["meta"], "links", %{}),
       hex_updated_at: data["updated_at"],
     }
   end

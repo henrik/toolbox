@@ -13,7 +13,7 @@ defmodule Toolbox.PackageSyncTest do
 
   defmodule FakeHexClient do
     defmodule Packages do
-      def a, do: %{"name" => "a", "updated_at" => "2001-01-01T00:00:00Z", "meta" => %{"description" => "A.", "licenses" => ["MIT"]}}
+      def a, do: %{"name" => "a", "updated_at" => "2001-01-01T00:00:00Z", "meta" => %{"description" => "A.", "licenses" => ["MIT"], "links" => %{ "link1" => "url1" }}}
       def b, do: %{"name" => "b", "updated_at" => "2002-01-01T00:00:00Z", "meta" => %{"description" => "B."}}
 
       # Exact same timestamp to test border case.
@@ -60,6 +60,7 @@ defmodule Toolbox.PackageSyncTest do
     assert first_package.description == "A."
     assert first_package.hex_updated_at == parse_datetime("2001-01-01T00:00:00Z")
     assert first_package.licenses == ["MIT"]
+    assert first_package.links == %{"link1" => "url1"}
 
     Toolbox.PackageSync.run(FakeHexClient.State3)
 
