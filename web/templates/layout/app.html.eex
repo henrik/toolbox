@@ -19,11 +19,9 @@
         A categorized catalog of Hex packages for Elixir and the Erlang ecosystem<!--TODO: with popularity ratings from Hex and GitHub -->.
       </p>
 
-      <p>
+      <p class="site-menu">
         <a href="/">Packages</a>
-        -
         <a href="/categories">Manage categories</a>
-        -
         <a href="https://github.com/henrik/toolbox/wiki/wishlist">Package wishlist</a>
       </p>
     </header>

@@ -25,7 +25,7 @@
 }
 
 .site-heading a {
-  text-decoration: none;
+  border-bottom: none;
   color: inherit;
 }
 
@@ -33,6 +33,16 @@
   font-size: 25px;
   color: #888;
   margin-top: 10px;
+}
+
+.site-menu {
+  a {
+    text-transform: uppercase;
+    font-weight: bold;
+
+    margin-right: 1.5em;
+    &:last-child { margin-right: 0; }
+  }
 }
 
 .form-group {

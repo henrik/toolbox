@@ -70,3 +70,11 @@ table {
 td, th {
   text-align: left;
 }
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid $gray;
+
+  color: $dark-purple;
+  &:hover { color: $light-purple; }
+}
