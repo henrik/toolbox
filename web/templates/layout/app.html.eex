@@ -15,7 +15,6 @@
       <h1 class="site-heading"><a href="/">The BEAM Toolbox</a></h1>
 
       <p class="site-description">
-        <a href="https://github.com/henrik/toolbox#status">[WIP!]</a>
         A categorized catalog of Hex packages for Elixir and the Erlang ecosystem<!--TODO: with popularity ratings from Hex and GitHub -->.
       </p>
 
