@@ -13,12 +13,12 @@
 </ul>
 
 <%= for category <- @categories_with_packages do %>
-  <section class="category-section">
+  <section class="category-section <%= if Category.uncategorized?(category), do: "category-section--uncategorized" %>">
     <h2 class="category-heading" id="<%= anchor(category) %>"><%= category.name %></h2>
 
     <table class="table">
       <%= for package <- category.packages do %>
-        <tr>
+        <tr class="package">
           <td class="package__name">
             <%= package.name %>
           </td>
@@ -31,7 +31,7 @@
               <% end %>
             </p>
           </td>
-          <td class="align-right">
+          <td class="align-right package__categorize">
             <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
           </td>
         </tr>

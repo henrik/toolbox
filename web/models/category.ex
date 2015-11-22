@@ -35,6 +35,10 @@ defmodule Toolbox.Category do
     }
   end
 
+  def uncategorized?(category) do
+    category.id == 0
+  end
+
   def sort_by_name(query \\ __MODULE__) do
     Ecto.Query.from c in query,
       order_by: [asc: c.name]

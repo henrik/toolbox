@@ -99,3 +99,7 @@
     text-transform: uppercase;
   }
 }
+
+.category-section .package .package__categorize { opacity: 0.25; }
+.category-section .package:hover .package__categorize { opacity: 1; }
+.category-section--uncategorized .package .package__categorize { opacity: 1; }
