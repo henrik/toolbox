@@ -123,23 +123,25 @@ $font-size-small: 13px;
   }
 }
 
-.package__name {
-  font-weight: bold;
-}
-
-.package__description_etc {
-  p {
-    margin: 0;
+.package {
+  &__name {
+    font-weight: bold;
   }
-}
 
-.package__links {
-  a {
-    margin-right: 0.75em;
-    &:last-child { margin-right: 0; }
+  &__description_etc {
+    p {
+      margin: 0;
+    }
+  }
 
-    text-transform: uppercase;
-    font-size: $font-size-small;
+  &__links {
+    a {
+      margin-right: 0.75em;
+      &:last-child { margin-right: 0; }
+
+      text-transform: uppercase;
+      font-size: $font-size-small;
+    }
   }
 }
 
