@@ -31,7 +31,7 @@
               <% end %>
             </p>
           </td>
-          <td class="align-right package__categorize">
+          <td class="table__actions package__categorize">
             <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
           </td>
         </tr>

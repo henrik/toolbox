@@ -1,6 +1,6 @@
 <h2><%= @page_title %></h2>
 
-<p><%= link "Add category", to: category_path(@conn, :new) %></p>
+<p class="action-link"><%= link "Add category", to: category_path(@conn, :new) %></p>
 
 <table class="table">
   <tbody>
@@ -8,7 +8,7 @@
     <tr>
       <td><%= category.name %></td>
 
-      <td class="align-right">
+      <td class="table__actions">
         <%= link "Edit", to: category_path(@conn, :edit, category), class: "btn btn-default btn-xs" %>
         <%= link "Delete", to: category_path(@conn, :delete, category), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </td>
@@ -17,4 +17,4 @@
   </tbody>
 </table>
 
-<p><%= link "Add category", to: category_path(@conn, :new) %></p>
+<p class="action-link"><%= link "Add category", to: category_path(@conn, :new) %></p>

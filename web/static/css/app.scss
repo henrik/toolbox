@@ -1,3 +1,6 @@
+$font-size-normal: 16px;
+$font-size-small: 13px;
+
 @import "colors";
 @import "base";
 @import "phoenix";
@@ -13,10 +16,6 @@
   list-style-type: none;
   text-align: center;
   line-height: 30px;
-}
-
-.align-right {
-  text-align: right;
 }
 
 .site-heading {
@@ -63,6 +62,22 @@
   td {
     padding: 5px;
   }
+
+  &__actions {
+    text-align: right;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+
+    a {
+      margin-right: 0.75em;
+      &:last-child { margin-right: 0; }
+    }
+  }
+}
+
+.action-link {
+  text-transform: uppercase;
+  margin: 2em 0;
 }
 
 .category-section {
@@ -102,11 +117,11 @@
 
 .package__links {
   a {
-    margin-right: 0.5em;
+    margin-right: 0.75em;
     &:last-child { margin-right: 0; }
 
-    text-decoration: none;
     text-transform: uppercase;
+    font-size: $font-size-small;
   }
 }
 
