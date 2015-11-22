@@ -27,7 +27,7 @@
             <p class="package__links">
               <%= link "Hex", to: hex_url(package) %>
               <%= for {name, value} <- package.links do %>
-                <%= link name, to: value %>
+                <%= link name, to: value, rel: "nofollow" %>
               <% end %>
             </p>
           </td>
