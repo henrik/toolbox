@@ -1,5 +1,7 @@
 <h2><%= @page_title %></h2>
 
+<p><%= link "Add category", to: category_path(@conn, :new) %></p>
+
 <table class="table">
   <tbody>
 <%= for category <- @categories do %>
@@ -15,4 +17,4 @@
   </tbody>
 </table>
 
-<%= link "New category", to: category_path(@conn, :new) %>
+<p><%= link "Add category", to: category_path(@conn, :new) %></p>
