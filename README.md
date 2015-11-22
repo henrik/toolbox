@@ -18,15 +18,21 @@ Contributions welcome.
 
 You are expected to have Elixir, [Phoenix (including Node.js and npm)](http://www.phoenixframework.org/docs/installation) and Postgres installed.
 
+If the default database user and password does not work for you, you can customize it by setting the `POSTGRES_USER` and/or `POSTGRES_PASSWORD` environment variables.
+
 Then:
 
     mix deps.get
     mix ecto.setup
-    mix phoenix.server
+    npm install
 
 Populate the database from the Hex API:
 
     mix run -e "Toolbox.PackageSync.run"
+
+And start the web server:
+
+    mix phoenix.server
 
 Now visit <http://localhost:4000>.
 
