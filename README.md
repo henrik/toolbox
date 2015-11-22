@@ -18,6 +18,8 @@ Contributions welcome.
 
 You are expected to have Elixir, [Phoenix (including Node.js and npm)](http://www.phoenixframework.org/docs/installation) and Postgres installed.
 
+If the default database user and password does not work for you, you can customize it by setting the `POSTGRES_USER` and/or `POSTGRES_PASSWORD` environment variables.
+
 Then:
 
     mix deps.get
