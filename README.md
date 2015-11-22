@@ -53,6 +53,10 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 
     script/deploy
 
+Get a production console:
+
+    ssh dokku run toolbox "iex -S mix"
+
 ## How it was set up
 
 * [Notes from running Dokku on Digital Ocean](https://gist.github.com/henrik/26bb73091712aa42abf2)
