@@ -77,9 +77,8 @@ $font-size-small: 13px;
     vertical-align: top;
   }
 
-  td {
-    padding: 5px;
-  }
+  td { padding: 5px; }
+  &--airy td { padding: 10px 5px; }
 
   &__actions {
     text-align: right;

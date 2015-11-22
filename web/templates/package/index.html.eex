@@ -16,7 +16,7 @@
   <section class="category-section <%= if Category.uncategorized?(category), do: "category-section--uncategorized" %>">
     <h2 class="category-heading" id="<%= anchor(category) %>"><%= category.name %></h2>
 
-    <table class="table">
+    <table class="table table--airy">
       <%= for package <- category.packages do %>
         <tr class="package">
           <td class="package__name">
