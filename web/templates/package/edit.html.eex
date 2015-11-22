@@ -4,6 +4,11 @@
   <%= @package.description %>
 </p>
 
+<p>
+  You can select multiple categories by holding e.g. Command (⌘) key on a Mac or Ctrl on Windows.
+  Need to <%= link "add a category", to: category_path(@conn, :new) %>?
+</p>
+
 <%= form_for @changeset, package_path(@conn, :update, @package), fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
@@ -23,10 +28,6 @@
       class: "package-edit__select"
     %>
   </div>
-
-  <p>
-    Need to <%= link "add a category", to: category_path(@conn, :new) %>?
-  </p>
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
