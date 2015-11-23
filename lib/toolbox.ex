@@ -10,7 +10,7 @@ defmodule Toolbox do
       # Start the endpoint when the application starts
       supervisor(Toolbox.Endpoint, []),
       # Start the Ecto repository
-      worker(Toolbox.Repo, []),
+      supervisor(Toolbox.Repo, []),
       # Syncing packages from Hex
       worker(Toolbox.PackageSyncWorker, []),
       # Here you could define other workers and supervisors as children
