@@ -81,9 +81,7 @@ Get a production console:
 - [x] Verify all packages are synced (e.g. count them)
 - [x] ToC
 - [x] Page titles
-- [ ] Rename? "Beambox"?
-- [ ] Prettify
-  - [ ] Make categorize an icon
+- [x] Prettify
 - [ ] Improve UX
 - [ ] Honeypot for categories to avoid spam?
 
