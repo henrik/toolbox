@@ -16,26 +16,26 @@
   <section class="category-section <%= if Category.uncategorized?(category), do: "category-section--uncategorized" %>">
     <h2 class="category-heading" id="<%= anchor(category) %>"><%= category_name category %></h2>
 
-    <table class="table table--airy">
+    <div class="category-section__packages">
       <%= for package <- category.packages do %>
-        <tr class="package">
-          <td class="package__name">
+        <div class="package">
+          <h3 class="package__name">
             <%= package.name %>
-          </td>
-          <td class="package__description_etc">
-            <p><%= package.description %></p>
-            <p class="package__links">
-              <%= link "Hex", to: hex_url(package) %>
-              <%= for {name, value} <- package.links do %>
-                <%= link name, to: value, rel: "nofollow" %>
-              <% end %>
-            </p>
-          </td>
-          <td class="table__actions package__categorize">
-            <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
-          </td>
-        </tr>
+          </h3>
+          <p class="package__description"><%= package.description %></p>
+          <p class="package__links">
+            <%= link "Hex", to: hex_url(package) %>
+            <%= for {name, value} <- package.links do %>
+              <%= link name, to: value, rel: "nofollow" %>
+            <% end %>
+
+            <span class="package__links__categorize">
+              <span class="bullet">&bull;</span>
+              <a href="<%= package_path(@conn, :edit, package.name) %>">Categorize</a>
+            </span>
+          </p>
+        </div>
       <% end %>
-    </table>
+    </div>
   </section>
 <% end %>
