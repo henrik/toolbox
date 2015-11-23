@@ -16,4 +16,17 @@ defmodule Toolbox.PackageView do
   def anchor(%Category{id: id}) do
     "p-#{id}"
   end
+
+  def category_name(category) do
+    case String.split(category.name, ": ", parts: 2) do
+      [group, name] ->
+        html_escape [
+          content_tag(:span, group <> ":", class: "category-group"),
+          " ",
+          name,
+        ]
+      [name] ->
+        name |> html_escape
+    end
+  end
 end

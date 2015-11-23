@@ -97,6 +97,11 @@ $font-size-small: 13px;
   margin: 2em 0;
 }
 
+.category-group {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .category-section {
   margin: 20px 0;
   border-top: 1px solid $border-color;
