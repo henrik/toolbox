@@ -37,6 +37,7 @@ $font-size-small: 13px;
 
 .site-heading {
   font-size: 40px;
+  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -52,12 +53,13 @@ $font-size-small: 13px;
 }
 
 .site-menu {
+  line-height: 1.75em;
+
   a {
     text-transform: uppercase;
     font-weight: bold;
-
-    margin-right: 1.5em;
-    &:last-child { margin-right: 0; }
+    margin: 0 0.75em;
+    white-space: nowrap;
   }
 }
 
