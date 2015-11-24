@@ -35,21 +35,27 @@ $font-size-small: 13px;
   }
 }
 
+$heading-breakpoint: 450px;
+
 .site-heading {
-  font-size: 40px;
   margin-top: 20px;
   margin-bottom: 0;
-}
 
-.site-heading a {
-  border-bottom: none;
-  color: inherit;
+  font-size: 30px;
+  @media only screen and (min-width: $heading-breakpoint) { font-size: 40px; }
+
+  a {
+    border-bottom: none;
+    color: inherit;
+  }
 }
 
 .site-description {
-  font-size: 25px;
   color: #888;
   margin-top: 10px;
+
+  font-size: 20px;
+  @media only screen and (min-width: $heading-breakpoint) { font-size: 25px; }
 }
 
 .site-menu {
