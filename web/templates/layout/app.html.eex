@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><%= assigns[:page_title] && (@page_title <> " – " <> site_name) || site_name %></title>
+    <title><%= assigns[:page_title] && (@page_title <> " – " <> Toolbox.site_name) || Toolbox.site_name %></title>
     <link href="https://fonts.googleapis.com/css?family=Actor" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
@@ -22,6 +22,7 @@
         <a href="/">Packages</a>
         <a href="/categories">Manage categories</a>
         <a href="https://github.com/henrik/toolbox/wiki/wishlist">Package wishlist</a>
+        <a href="/about">About</a>
       </p>
     </header>
 

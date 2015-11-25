@@ -6,7 +6,8 @@
 #     ssh dokku run toolbox mix run -e 'Toolbox.PackageSync.run'
 
 defmodule Toolbox.PackageSync do
-  def interval, do: 5 * 60 * 1000  # ms (= 5 minutes)
+  def minute_interval, do: 5
+  def interval, do: minute_interval * 60 * 1000  # ms
 
   def run(client \\ HexClient) do
     client
