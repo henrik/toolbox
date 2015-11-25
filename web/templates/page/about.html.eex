@@ -1,17 +1,19 @@
 <h2 class="page-title"><%= @page_title %></h2>
 
-<p>
-  <%= Toolbox.site_name %> mirrors the <a href="https://hex.pm">Hex.pm</a> package repository site to add information (like categories) to help you explore and find packages (libraries) for <a href="http://elixir-lang.org/">Elixir</a>, <a href="http://www.erlang.org/">Erlang</a> and other languages on the BEAM.
-</p>
+<div class="about-text">
+  <p>
+    <%= Toolbox.site_name %> mirrors the <a href="https://hex.pm">Hex.pm</a> package repository site to add information (like categories) to help you explore and find packages (libraries) for <a href="http://elixir-lang.org/">Elixir</a>, <a href="http://www.erlang.org/">Erlang</a> and other languages on the BEAM.
+  </p>
 
-<p>
-  Hex.pm is currently focused on core functionality. This separate site lets us experiment with ways of organizing and presenting packages that could perhaps one day be added to the Hex.pm site itself.
-</p>
+  <p>
+    Hex.pm is currently focused on core functionality. This separate site lets us experiment with ways of organizing and presenting packages that could perhaps one day be added to the Hex.pm site itself.
+  </p>
 
-<p>
-  This site is crowdsourced. Anyone can categorize packages. Please do! Add, edit or remove (with some care) existing categories if it makes things better. Packages can belong to multiple categories.
-</p>
+  <p>
+    This site is crowdsourced. Anyone can categorize packages. Please do! Add, edit or remove (with some care) existing categories if it makes things better. Packages can belong to multiple categories.
+  </p>
 
-<p>
-  This site is <a href="https://github.com/henrik/toolbox">open source</a> and contributions are welcome. See <a href="http://github.com/henrik/toolbox/issues">the issues list</a> for some ideas.
-</p>
+  <p>
+    This site is <a href="https://github.com/henrik/toolbox">open source</a> and contributions are welcome. See <a href="http://github.com/henrik/toolbox/issues">the issues list</a> for some ideas.
+  </p>
+</div>

@@ -200,3 +200,9 @@ $heading-breakpoint: 450px;
   font-weight: normal;
   border-bottom: 0;
 }
+
+.about-text {
+  max-width: 45em;
+  margin: 0 auto;
+  line-height: 1.75;
+}
