@@ -1,35 +1,37 @@
-<h2>Select categories for <em><%= @package.name %></em></h2>
+<h2 class="page-title">Select categories for <em><%= @package.name %></em></h2>
 
-<p class="package-edit__description">
-  <%= @package.description %>
-</p>
+<div class="center-content">
+  <p class="package-edit__description">
+    <%= @package.description %>
+  </p>
 
-<p>
-  You can select multiple categories by holding e.g. Command (⌘) key on a Mac or Ctrl on Windows.
-  Need to <%= link "add a category", to: category_path(@conn, :new) %>?
-</p>
+  <p>
+    You can select multiple categories by holding e.g. Command (⌘) key on a Mac or Ctrl on Windows.
+    Need to <%= link "add a category", to: category_path(@conn, :new) %>?
+  </p>
 
-<%= form_for @changeset, package_path(@conn, :update, @package), fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below:</p>
-      <ul>
-        <%= for {attr, message} <- f.errors do %>
-          <li><%= humanize(attr) %> <%= message %></li>
-        <% end %>
-      </ul>
+  <%= form_for @changeset, package_path(@conn, :update, @package), fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below:</p>
+        <ul>
+          <%= for {attr, message} <- f.errors do %>
+            <li><%= humanize(attr) %> <%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%=
+        multiple_select f, :categories, categories_for_select(@all_categories),
+        value: Enum.map(@package.categories, &(&1.id)),
+        class: "package-edit__select"
+      %>
+    </div>
+
+    <div class="form-group">
+      <%= submit "Submit", class: "btn btn-primary" %>
     </div>
   <% end %>
-
-  <div class="form-group">
-    <%=
-      multiple_select f, :categories, categories_for_select(@all_categories),
-      value: Enum.map(@package.categories, &(&1.id)),
-      class: "package-edit__select"
-    %>
-  </div>
-
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
-  </div>
-<% end %>
+</div>

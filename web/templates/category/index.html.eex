@@ -1,4 +1,4 @@
-<h2><%= @page_title %></h2>
+<h2 class="page-title"><%= @page_title %></h2>
 
 <p class="action-link"><%= link "Add category", to: category_path(@conn, :new) %></p>
 
