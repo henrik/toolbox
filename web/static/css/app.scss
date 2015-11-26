@@ -61,11 +61,16 @@ $heading-breakpoint: 450px;
 .site-menu {
   line-height: 1.75em;
 
-  a {
+  &__link {
     text-transform: uppercase;
     font-weight: bold;
     margin: 0 0.75em;
     white-space: nowrap;
+
+    &--current {
+      color: inherit;
+      border-bottom-color: transparent;
+    }
   }
 }
 

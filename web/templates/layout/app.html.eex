@@ -19,10 +19,10 @@
       </p>
 
       <p class="site-menu">
-        <a href="/">Packages</a>
-        <a href="/categories">Manage categories</a>
-        <a href="https://github.com/henrik/toolbox/wiki/wishlist">Package wishlist</a>
-        <a href="/about">About</a>
+        <%= menu_link @conn, "Packages", to: "/" %>
+        <%= menu_link @conn, "Manage categories", to: "/categories" %>
+        <%= menu_link @conn, "Package wishlist", to: "https://github.com/henrik/toolbox/wiki/wishlist" %>
+        <%= menu_link @conn, "About", to: "/about" %>
       </p>
     </header>
 
