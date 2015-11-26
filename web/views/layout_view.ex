@@ -9,7 +9,7 @@ defmodule Toolbox.LayoutView do
     menu_link(text, to: path, extra_classes: "")
   end
 
-  def menu_link(text, to: path, extra_classes: extra_classes) do
+  defp menu_link(text, to: path, extra_classes: extra_classes) do
     link(text, to: path, class: "site-menu__link #{extra_classes}")
   end
 end
