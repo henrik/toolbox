@@ -7,7 +7,7 @@
 
 A site to list Hex packages by category.
 
-Inspired by <http://ruby-toolbox.com>. Name borrowed from Josh Adams of [Elixir Sips](http://elixirsips.com/) with his blessing.
+Name borrowed from Josh Adams of [Elixir Sips](http://elixirsips.com/) with his blessing.
 
 
 ## Development
