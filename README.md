@@ -1,5 +1,8 @@
 # The BEAM Toolbox
 
+[![Build Status](https://secure.travis-ci.org/henrik/toolbox.svg?branch=master
+"Build Status")](https://travis-ci.org/henrik/toolbox)
+
 <http://toolbox.elixir.pm>
 
 A site to list Hex packages by category.
