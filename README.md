@@ -22,7 +22,7 @@ Then:
     mix ecto.setup
     npm install
 
-Populate the database from the Hex API:
+If you like, populate the database from the Hex API:
 
     mix run -e "Toolbox.PackageSync.run"
 
