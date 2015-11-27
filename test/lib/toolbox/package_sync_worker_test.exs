@@ -22,16 +22,16 @@ defmodule Toolbox.PackageSyncWorkerTest do
     Process.register self, :test
     {:ok, _} = Toolbox.PackageSyncWorker.start_link
 
-    :timer.sleep 20
+    :timer.sleep 15
     refute_received :synced
 
-    :timer.sleep 10
+    :timer.sleep 15
     assert_received :synced
 
-    :timer.sleep 20
+    :timer.sleep 15
     refute_received :synced
 
-    :timer.sleep 10
+    :timer.sleep 15
     assert_received :synced
   end
 end
