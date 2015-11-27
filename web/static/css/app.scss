@@ -43,11 +43,6 @@ $heading-breakpoint: 450px;
 
   font-size: 35px;
   @media only screen and (min-width: $heading-breakpoint) { font-size: 40px; }
-
-  a {
-    border-bottom: none;
-    color: inherit;
-  }
 }
 
 .site-description {
@@ -200,6 +195,12 @@ $heading-breakpoint: 450px;
 
 .bullet {
   color: $dark-gray;
+}
+
+.link--discreet {
+  border-bottom: none;
+  color: inherit;
+  &:hover { color: inherit; }
 }
 
 .back-to-top {

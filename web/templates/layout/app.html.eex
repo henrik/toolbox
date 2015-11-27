@@ -14,11 +14,13 @@
   <body>
     <header>
       <p>
+        <a href="/" class="link--discreet">
         <%# Scaled down for retina. %>
-        <img src="/images/logo.png" alt="" style="width: 137px; height: 137px">
+          <img src="/images/logo.png" alt="" style="width: 137px; height: 137px">
+        </a>
       </p>
 
-      <h1 class="site-heading"><a href="/">The BEAM Toolbox</a></h1>
+      <h1 class="site-heading"><a href="/" class="link--discreet">The BEAM Toolbox</a></h1>
 
       <p class="site-description">
         A categorized catalog of Hex packages for Elixir and the Erlang ecosystem<!--TODO: with popularity ratings from Hex and GitHub -->.
