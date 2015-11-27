@@ -15,7 +15,7 @@
     <header>
       <p>
         <%# Scaled down for retina. %>
-        <img src="/images/logo.png" alt="" style="width: 137px">
+        <img src="/images/logo.png" alt="" style="width: 137px; height: 137px">
       </p>
 
       <h1 class="site-heading"><a href="/">The BEAM Toolbox</a></h1>
