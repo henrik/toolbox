@@ -69,6 +69,7 @@ Get a production console:
 
 * [Libraries.io](https://libraries.io/)
 * [Ember Observer](http://emberobserver.com/)
+* [Atom package directory](https://atom.io/packages)
 
 
 ## License and credits
