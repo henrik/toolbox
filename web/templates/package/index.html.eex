@@ -6,6 +6,8 @@
   <% end %>
 </p>
 
+<a id="top"></a>
+
 <ul class="toc">
   <%= for category <- @categories_with_packages do %>
     <li><a href="#<%= anchor(category) %>"><%= category_name category %></a></li>
@@ -18,7 +20,7 @@
       <%= category_name category %>
 
       <%# Replace this with a prettier Font Awesome thing later? %>
-      <a href="#" class="back-to-top" title="Back to top">^</a>
+      <a href="#top" class="back-to-top" title="Back to top">^</a>
     </h2>
 
     <div class="category-section__packages">
