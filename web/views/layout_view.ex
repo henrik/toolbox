@@ -1,7 +1,7 @@
 defmodule Toolbox.LayoutView do
   use Toolbox.Web, :view
 
-  def menu_link(%Plug.Conn{request_path: req}, text, to: path) when req == path do
+  def menu_link(%Plug.Conn{request_path: path}, text, to: path) do
     menu_link(text, to: path, extra_classes: "site-menu__link--current")
   end
 
