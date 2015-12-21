@@ -21,7 +21,7 @@ defmodule Toolbox.ConnCase do
       use Phoenix.ConnTest
 
       alias Toolbox.Repo
-      import Ecto.Model
+      import Ecto
       import Ecto.Query, only: [from: 2]
 
       import Toolbox.Router.Helpers

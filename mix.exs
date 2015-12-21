@@ -43,10 +43,10 @@ defmodule Toolbox.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.0.3"},
-      {:phoenix_ecto, "~> 1.1"},
+      {:phoenix, "~> 1.1"},
+      {:phoenix_ecto, "~> 2.0"},
       {:postgrex, ">= 0.0.0"},
-      {:phoenix_html, "~> 2.1"},
+      {:phoenix_html, "~> 2.3"},
       {:cowboy, "~> 1.0"},
       {:poison, "> 0.0.0"},
       {:honeybadger, "~> 0.1"},

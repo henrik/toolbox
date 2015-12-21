@@ -17,7 +17,7 @@ defmodule Toolbox.ModelCase do
   using do
     quote do
       alias Toolbox.Repo
-      import Ecto.Model
+      import Ecto
       import Ecto.Query, only: [from: 2]
       import Toolbox.ModelCase
     end
