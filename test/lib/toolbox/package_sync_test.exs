@@ -72,7 +72,7 @@ defmodule Toolbox.PackageSyncTest do
   end
 
   defp first_package, do: load_packages |> hd
-  defp package_names, do: load_packages |> Enum.map &(&1.name)
+  defp package_names, do: load_packages |> Enum.map(&(&1.name))
   defp load_packages, do: Toolbox.Repo.all(Toolbox.Package.sort_by_name)
 
   defp parse_datetime(string) do

@@ -4,6 +4,6 @@ defmodule Toolbox.PageController do
   def about(conn, _params) do
     conn
     |> assign(:page_title, "About")
-    |> render "about.html"
+    |> render("about.html")
   end
 end
