@@ -30,7 +30,7 @@
           <p class="package__description"><%= package.description %></p>
           <p class="package__links">
             <%= link "Hex", to: hex_url(package) %>
-            <%= for {name, value} <- package.links do %>
+            <%= for {name, value} <- (package.links || []) do %>
               <%= link name, to: value, rel: "nofollow" %>
             <% end %>
 
