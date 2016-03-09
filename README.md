@@ -51,7 +51,8 @@ Deployed to Dokku. This deploys and then runs migrations, if any:
 
 Get a production console:
 
-    ssh dokku run toolbox "iex -S mix"
+    ssh henroku
+    dokku run toolbox "iex -S mix"
 
 ### How it was set up
 
