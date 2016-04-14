@@ -37,6 +37,14 @@ Want to wipe the DB and start over?
 
     mix ecto.reset
 
+### Console
+
+Get a console with:
+
+    iex -S mix
+
+It imports `Ecto.Query` and aliases things like `Toolbox.Repo` (see `.iex.exs`), so you don't have to spell them out.
+
 
 ## Test
 
